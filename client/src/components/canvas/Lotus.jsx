@@ -1,8 +1,10 @@
 import * as THREE from "three";
-import React, { Suspense, useRef } from "react";
+import React, { Suspense, useRef, useMemo } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
-import { Text, useGLTF } from "@react-three/drei";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
+import { Text, useGLTF} from "@react-three/drei";
 import { Html } from "@react-three/drei";
 import LightRays from "../react-bits/LightRays";
 import CanvasLoader  from "../CanvasLoader"
@@ -19,42 +21,57 @@ function Lotus() {
 }
 
 function LotusText() {
- 
-  return (
-    <Text
-      position={[0, 0.5, 0]}
-      fontSize={0.2}
-      depth={0.1}
-      bevelEnabled={true}             // gives a nice “raised” look
-      bevelThickness={0.1}
-      bevelSize={0.03}
-      bevelSegments={3}
-    //   fillOpacity={0.4}
-      color="#ffddaa"
-      anchorX="center"
-      anchorY="bottom"
-      material={new THREE.MeshStandardMaterial({ roughness: 5, metalness: 0.32 })}
-    >
-      <div className="vintage">Ahamkara</div>
-    </Text>
+  const font = useLoader(FontLoader, "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json");
+  const textGeom = useMemo(() => {
+    const g = new TextGeometry("ahamkara", {
+      font,
+      size: 0.1,
+      height: 0.03,
+      curveSegments: 10,
+      bevelEnabled: true,
+      bevelThickness: 0.001,
+      bevelSize: 0.005,
+      bevelOffset: 0,
+      bevelSegments: 2,
+    });
+    g.center(); 
+    return g;
+  }, [font]);
+
+  const textMat = useMemo(
+    () => new THREE.MeshStandardMaterial({ color: 0xffddaa }),
+    []
   );
-}
-function MovingLotus() {
-  const flowerRef = useRef(null);
-  const textRef = useRef(null);
+  const meshRef = useRef();
 
+  // Animate the bob‑up‑and‑down effect
   useFrame((state) => {
-    // Rotate the flower slowly around Y
-    if (flowerRef.current) {
-      flowerRef.current.rotation.y += 0.005;
-    }
-
-    // Let the text bob up‑and‑down
-    if (textRef.current) {
-      const t = state.clock.getElapsedTime();
-      textRef.current.position.y = -0.7 + Math.sin(t * 1) * 0.07; // tiny bob
-    }
+    const t = state.clock.getElapsedTime();
+    meshRef.current.position.y = -0.7 + Math.sin(t * 1) * 0.01;
   });
+
+  return (
+    <mesh
+      ref={meshRef}
+      geometry={textGeom}
+      material={textMat}
+      position={[-.01, 20, -10]} 
+      // optional fine‑tuning:
+      scale={0.5}  
+    />
+  );
+ 
+}
+export function MovingLotus() {
+  const flowerRef = useRef();
+  const textRef = useRef();
+
+  useFrame(() => {
+    if (flowerRef.current) flowerRef.current.rotation.y += 0.005;
+  
+    // textRef.current.position.y = ...    // you could remove this if not needed
+  });
+
   return (
     <>
       <group ref={flowerRef}>

@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { Renderer, Program, Triangle, Mesh } from 'ogl';
 
-const DEFAULT_COLOR = '#ffffff';
+const DEFAULT_COLOR = '#c4b5fd';
 
 const hexToRgb = hex => {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -391,7 +391,7 @@ void main() {
   return (
     <div
       ref={containerRef}
-      className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
+      className={`w-full h-full pointer-events-none z-[3] bg-base-300 overflow-hidden relative ${className}`.trim()}
     />
   );
 };
