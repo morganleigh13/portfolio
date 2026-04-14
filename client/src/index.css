@@ -2,3 +2,39 @@
 @plugin "daisyui" {
   themes: all;
 }
+
+
+@plugin "daisyui/theme" {
+  name: "llamalounge";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(39.2% 0.004 295.600);
+  --color-base-200: oklch(20% 0.014 265.755);
+  --color-base-300: oklch(1.3% 0.007 346.100);
+  --color-base-content: oklch(92.2% 0.084 307.174);
+  --color-primary: oklch(71% 0.202 349.761);
+  --color-primary-content: oklch(28% 0.109 3.907);
+  --color-secondary: oklch(95.2% 0.210 188.200);
+  --color-secondary-content: oklch(38% 0.189 293.745);
+  --color-accent: oklch(54% 0.281 293.009);
+  --color-accent-content: oklch(94% 0.028 342.258);
+  --color-neutral: oklch(44% 0.043 257.281);
+  --color-neutral-content: oklch(89% 0.057 293.283);
+  --color-info: oklch(70% 0.165 254.624);
+  --color-info-content: oklch(98% 0.019 200.873);
+  --color-success: oklch(79% 0.209 151.711);
+  --color-success-content: oklch(26% 0.065 152.934);
+  --color-warning: oklch(65.2% 0.366 75.200);
+  --color-warning-content: oklch(98% 0.016 73.684);
+  --color-error: oklch(65.1% 0.350 50.300);
+  --color-error-content: oklch(3.1% 0.015 12.422);
+  --radius-selector: 2rem;
+  --radius-field: 2rem;
+  --radius-box: 1rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.28125rem;
+  --border: 2px;
+  --depth: 1;
+  --noise: 1;
+}

@@ -5,7 +5,6 @@ import { OrbitControls, Preload } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { Text, useGLTF} from "@react-three/drei";
-import { Html } from "@react-three/drei";
 import LightRays from "../react-bits/LightRays";
 import CanvasLoader  from "../CanvasLoader"
 
@@ -23,14 +22,14 @@ function Lotus() {
 function LotusText() {
   const font = useLoader(FontLoader, "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json");
   const textGeom = useMemo(() => {
-    const g = new TextGeometry("ahamkara", {
+    const g = new TextGeometry("Morgan  Adams", {
       font,
-      size: 0.1,
-      height: 0.03,
-      curveSegments: 10,
+      size: 0.08,
+      height: 0.005,
+      curveSegments: 12,
       bevelEnabled: true,
-      bevelThickness: 0.001,
-      bevelSize: 0.005,
+      bevelThickness: 0.006,
+      bevelSize: 0.003,
       bevelOffset: 0,
       bevelSegments: 2,
     });
@@ -55,7 +54,7 @@ function LotusText() {
       ref={meshRef}
       geometry={textGeom}
       material={textMat}
-      position={[-.01, 20, -10]} 
+      position={[0, 10, -10]} 
       // optional fine‑tuning:
       scale={0.5}  
     />
@@ -69,7 +68,7 @@ export function MovingLotus() {
   useFrame(() => {
     if (flowerRef.current) flowerRef.current.rotation.y += 0.005;
   
-    // textRef.current.position.y = ...    // you could remove this if not needed
+    textRef.current.position.y = .7  
   });
 
   return (
