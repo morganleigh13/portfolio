@@ -1,12 +1,12 @@
 import * as THREE from "three";
-import React, { Suspense, useRef, useMemo } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import React, { Suspense, useRef, useMemo, forwardRef } from "react";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
-import { Text, useGLTF} from "@react-three/drei";
+import { Text, useGLTF } from "@react-three/drei";
 import LightRays from "../react-bits/LightRays";
-import CanvasLoader  from "../CanvasLoader"
+import CanvasLoader from "../CanvasLoader";
 
 function Lotus() {
   const gltf = useGLTF("/models/a_pink_lotus_flower.glb");
@@ -20,7 +20,10 @@ function Lotus() {
 }
 
 function LotusText() {
-  const font = useLoader(FontLoader, "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json");
+  const font = useLoader(
+    FontLoader,
+    "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
+  );
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Morgan  Adams", {
       font,
@@ -33,7 +36,7 @@ function LotusText() {
       bevelOffset: 0,
       bevelSegments: 2,
     });
-    g.center(); 
+    g.center();
     return g;
   }, [font]);
 
@@ -54,25 +57,66 @@ function LotusText() {
       ref={meshRef}
       geometry={textGeom}
       material={textMat}
-      position={[0, 10, -10]} 
+      position={[0, 10, -10]}
       // optional fine‑tuning:
-      scale={0.5}  
+      scale={0.5}
     />
   );
- 
 }
+export const HiddenText = forwardRef((props, ref) => {
+  // const font = useLoader(
+  //   FontLoader,
+  //   "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
+  // );
+  return (
+    <Text
+      ref={ref}
+      // font={font} 
+      fontSize={0.026}
+      anchorX="center"
+      anchorY="middle"
+      color="#01df72"
+      maxWidth={0.03}
+      lineHeight={1}
+      maxLineCount={1}
+      position={[0, 0.33, 0.5]}
+      renderOrder={5} // <‑‑ (optional) draw after the lotus
+      depthTest={false}
+    >
+      Ahamakara
+    </Text>
+  );
+});
+
 export function MovingLotus() {
   const flowerRef = useRef();
   const textRef = useRef();
+  const hiddenRef = useRef();
+  const { camera } = useThree();
 
   useFrame(() => {
-    if (flowerRef.current) flowerRef.current.rotation.y += 0.005;
-  
-    textRef.current.position.y = .7  
+    if (flowerRef.current) {
+      flowerRef.current.rotation.y += 0.003; // slow spin
+      flowerRef.current.rotation.x = 0.5; // slight tilt toward camera
+    }
+
+    if (hiddenRef.current && flowerRef.current) {
+      const flowerWorldPos = new THREE.Vector3();
+      flowerRef.current.getWorldPosition(flowerWorldPos);
+      const dist = camera.position.distanceTo(flowerWorldPos);
+      hiddenRef.current.scale.setScalar(dist < 1.5 ? 1 : 0);
+      const tilt = dist < 1.5 ? -Math.PI / 5.5 : 0;
+      hiddenRef.current.rotation.x = tilt;
+    }
+    // Text with my name
+    textRef.current.position.y = 0.66;
   });
 
   return (
     <>
+      <group ref={hiddenRef}>
+        <HiddenText />
+      </group>
       <group ref={flowerRef}>
         <Lotus />
       </group>
@@ -83,6 +127,7 @@ export function MovingLotus() {
     </>
   );
 }
+
 export default function App() {
   return (
     <>
@@ -103,17 +148,22 @@ export default function App() {
           saturation={1}
         />
       </div>
-      <div className="h-screen flex items-center justify-center relative z-10">
-        <Canvas camera={{ position: [0, 0, 3], fov: 45 }}>
-          <ambientLight intensity={0.6} />
-          <directionalLight position={[5, 10, 7.5]} intensity={0.8} />
-          <Suspense fallback={CanvasLoader}>
-            <MovingLotus />
-          </Suspense>
+      <div className="h-screen flex justify-center relative z-10">
+        <div className="h-7/8 w-9/13 overflow-hidden">
+          <Canvas
+            style={{ width: "100%", height: "100%" }}
+            camera={{ position: [0, 0, 3], fov: 45 }}
+          >
+            <ambientLight intensity={0.6} />
+            <directionalLight position={[5, 10, 7.5]} intensity={0.8} />
+            <Suspense fallback={<CanvasLoader />}>
+              <OrbitControls enablePan enableZoom enableDamping minDistance={1} maxDistance={5} />
+              <MovingLotus />
+            </Suspense>
 
-          <OrbitControls enableDamping />
-          <Preload all />
-        </Canvas>
+            <Preload all />
+          </Canvas>
+        </div>
       </div>
     </>
   );

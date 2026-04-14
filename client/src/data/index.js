@@ -1,0 +1,464 @@
+import { FaDharmachakra } from "react-icons/fa";
+import { GiBubbles, GiJewelCrown, GiSpaceSuit } from "react-icons/gi";
+import { ImBlogger2 } from "react-icons/im";
+import { LuHandHeart } from "react-icons/lu";
+import { SiFoodpanda } from "react-icons/si";
+
+export const navLinks = [
+  {
+    id: 1,
+    name: 'Home',
+    href: '#home',
+  },
+  {
+    id: 2,
+    name: 'About',
+    href: '#about',
+  },
+  {
+    id: 3,
+    name: 'Work',
+    href: '#work',
+  },
+  {
+    id: 4,
+    name: 'Contact',
+    href: '#contact',
+  },
+];
+
+export const clientReviews = [
+  {
+    id: 1,
+    name: 'Emily Johnson',
+    position: 'Marketing Director at GreenLeaf',
+    img: 'people/girlBlonde.jpg',
+    review:
+      'Working with Morgan was a fantastic experience. She transformed our outdated website into a modern, user-friendly platform. Her attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+  },
+  {
+    id: 2,
+    name: 'Mark Rogers',
+    position: 'Founder of TechGear Shop',
+    img: 'people/guyProfile.jpg',
+    review:
+      'Morgan’s expertise in web development is truly impressive. She delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. She’s a true professional! Fantastic work.',
+  },
+  {
+    id: 3,
+    name: 'John Dohsas',
+    position: 'Project Manager at UrbanTech ',
+    img: 'people/guyLatino.jpg',
+    review:
+      'I can’t say enough good things about Morgan. She was able to take our complex project requirements and turn them into a seamless, functional website. Her problem-solving abilities are outstanding.',
+  },
+  {
+    id: 4,
+    name: 'Ether Smith',
+    position: 'CEO of BrightStar Enterprises',
+    img: 'people/girlMulti.jpg',
+    review:
+      'Morgan was a pleasure to work with. She understood our requirements perfectly and delivered a website that exceeded our expectations. Her skills in both frontend and backend are top-notch.',
+  },
+];
+
+//Change to mine
+export const myProjects = [
+  {
+    title: 'Tech Talk - Blog',
+    desc: 'This project focuses on creating a responsive blog website. Below is an overview of what I used in this project along with some notes on future enhancements.',
+    subdesc:
+      'Login System: Integrated a login system using Passport for authentication, allowing users to securely access their accounts.Search Functionality: On the blogs page, implemented search functionality that queries all fields using regex in the backend, providing dynamic results.Blog Detail: Full blog with options to delete blogs and update if it is your blog or follow other users, add comments, like posts, and more. The system checks if you are already following a user before allowing unfollowing or following actions.',
+    href: 'http://192.168.1.27/madams/tech-talk',
+    texture: '/websites/recordings/tech-talk.mp4',
+    logo: ImBlogger2,
+    logoStyle: {
+      backgroundColor: '#0d9488',
+      border: '0.2px solid #2dd4bf',
+      boxShadow: '0px 0px 60px 0px #10b981',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Daisy',
+        path: './src/assets/tech/daisy.jpg',
+      },
+      {
+      id: 3,
+        name: 'RTK',
+        path: './src/assets/tech/redux.png',
+      },
+      {
+        id: 5, 
+        name: 'MongoDB',
+        path: './src/assets/tech/mongodb.png',
+      },
+      {
+        id: 4,
+        name: 'Node.js',
+        path: './src/assets/tech/nodejs.png',
+      },
+    ],
+  },
+  {
+    title: 'Bubbles - socket.io Chat app',
+    desc: 'Bubbles is a chat app that allows users to communicate with each other through different channels for different types of developers.',
+    subdesc:
+      'A chatbot integrated with Ollama, which can help users with their queries and provide information on various topics related to development. Different channels for different types of developers, such as frontend, backend, fullstack, etc. A channel drawer with icons that show how many messages have been added since the last visit, and a toggle to change themes. Signup and ability to change password if forgotten. Shows whether users are currently online or not. Addition of reactions to each message.',
+    href: "http://192.168.1.27/madams/bubbles",
+    texture: '/websites/recordings/bubbles.mp4',
+    logo: GiBubbles,
+    logoStyle: {
+      backgroundColor: '#18181b',
+      border: '0.2px solid #0ea5e9',
+      boxShadow: '0px 0px 60px 0px #0891b2',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Daisy',
+        path: './src/assets/tech/daisy.jpg',
+      },
+      {
+        id: 3,
+          name: 'RTK',
+          path: './src/assets/tech/redux.png',
+        },
+        {
+          id: 4,
+          name: 'MongoDB',
+          path: './src/assets/tech/mongodb.png',
+        },
+        {
+          id: 5,
+          name: 'Node.js',
+          path: './src/assets/tech/nodejs.png',
+        },
+        {
+          id: 6,
+          name: 'Ollama',
+          path: './src/assets/tech/llama.jpg',
+        },
+        {
+          id: 7,
+          name: 'Faker',
+          path: './src/assets/tech/faker.jpg',
+        },
+    ],
+  },
+  {
+    title: 'Interstellar Spaces - Real Estate Platform',
+    desc: 'A Real‑Estate Platform for the Cosmos Interstellar Spaces is a full‑stack web application that lets users browse, compare, and favorite properties located on planets, moons, and orbital habitats outside Earth. They can also contact Listing Agents about specific properties. Built with a modern React stack, the project demonstrates my experience in building scalable, maintainable codebases while keeping the user experience polished and responsive.  There is an admin section that has a dashboard where Listing Agents can manage messages from clients and update properties managed by them.',
+    subdesc:
+      'A Next‑Gen real‑estate app that uses React + useContext on the front‑end, Passport and Argon2 on the back‑end, and is styled with Tailwind CSS + DaisyUI. It includes a robust login system, dynamic UI components, and a powerful search engine.',
+    href: "http://192.168.1.27/madams/interstellar-spaces",
+    texture: '/websites/recordings/interstellar-spaces.mp4',
+    logo: GiSpaceSuit,
+    logoStyle: {
+      backgroundColor: '#1e3a8a',
+      background:
+        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(0, 0, 250, 0.9) 0%, rgba(10, 100, 180, 0.8) 100%)',
+      border: '0.2px solid rgba(208, 213, 221, 1)',
+      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+      
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Daisy',
+        path: './src/assets/tech/daisy.jpg',
+      },
+      {
+        id: 3,
+        name: 'MongoDB',
+        path: './src/assets/tech/mongodb.png',
+      },
+      {
+        id: 4,
+        name: 'Node.js',
+        path: './src/assets/tech/nodejs.png',
+      },
+    ],
+  },
+  {
+    title: 'Project You - Project Tracker',
+    desc: 'Welcome to Project You, your one-stop website for premade packages that can transform you through plastic surgery, dentistry, working out, life coaches and more! This platform is designed to help users sign up for various services offered by certified professionals in the medical field. Our mission is to provide a safe and convenient environment where users can connect with their preferred service providers while ensuring their privacy and security at all times.',
+    subdesc:
+      'Employee Signup/Login System, Client and Employee Management System, Tasks Management System, Certification System and much more. Check out my repo for a full ReadMe.',
+    href: "http://gitlab.perryville.perseverenow.org/madams/project-you",
+    texture: '/websites/recordings/project-you.mp4',
+    logo: LuHandHeart,
+    logoStyle: {
+      backgroundColor: '#5b21b6',
+      border: '0.2px solid #581c87',
+      boxShadow: '0px 0px 60px 0px #a78bfa',
+    },
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: './src/assets/tech/redux.png',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: './src/assets/tech/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: './src/assets/tech/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+      {
+        id: 7,
+        name: 'Faker',
+        path: './src/assets/tech/faker.jpg',
+      },
+    ],
+  },
+  {
+    title: 'The Power of Me - Project Managment and eCommerace',
+    desc: 'Welcome to The Power of Me, your ultimate destination for mindfulness and spiritual growth! Here at The Power of Me, we offer a variety of yoga, chakra, and meditation classes designed to help you find inner peace, enhance flexibility, and promote overall well-being. We also have an aromatherapy store where you can purchase essential oils. All transactions are secure!!',
+    subdesc:
+      'Login System: Users can sign up for an account on our website, log in to access their dashboard. User Dashboard: Once logged in users can add and pay for classes that they are enrolled in, remove classes, see purchases from our store. Admin Dashboard: Once admin is established they have their own dashboards where they can do and see the same things as the users. PLus, they can remove users from classes, view all the users according to the classes they are enrolled in and delete users.',
+    href: "http://gitlab.perryville.perseverenow.org/madams/the-power-of-me",
+    texture: '/websites/recordings/the-power-of-me.mp4',
+    logo: FaDharmachakra,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #831843',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: './src/assets/tech/redux.png',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: './src/assets/tech/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: './src/assets/tech/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Faker',
+        path: './src/assets/tech/faker.jpg',
+      },
+    ],
+  },
+  {
+    title: 'Panda Pack- Project Tracker with Postgres',
+    desc: 'NEED TO DO',
+    subdesc:
+      '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',
+    href: "http://192.168.1.27/madams/panda-pack",
+    texture: '/websites/recordings/panda-pack.mp4',
+    logo: SiFoodpanda,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #831843',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: './src/assets/tech/redux.png',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 4,
+        name: 'Postgres',
+        path: './src/assets/tech/postgres.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: './src/assets/tech/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Faker',
+        path: './src/assets/tech/faker.jpg',
+      },
+    ],
+  },
+  {
+    title: 'Frosting - E-Commerce',
+    desc: 'NEED TO DO',
+    subdesc:
+      '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',
+    href: "http://192.168.1.27/madams/frosting",
+    texture: '/websites/recordings/frosting.mp4',
+    logo: GiJewelCrown,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #831843',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: './src/assets/tech/redux.png',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: './src/assets/tech/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: './src/assets/tech/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Faker',
+        path: './src/assets/tech/faker.jpg',
+      },
+    ],
+  },
+];
+
+export const calculateSizes = (isSmall, isMobile, isTablet) => {
+  return {
+    deskScale : isSmall ? 0.05 : isMobile ? 1 : 0.1,
+    deskPosition : isSmall ? [-4,2,0] : isMobile ? [0, 0, 0] : isTablet ? [0,0,0] : [1,-1, 5],
+    deskRotation: isMobile ? [0.2,110,0.0] : isTablet ? [0.2,110,0] : [0.2,110,0],
+    cubePosition : isSmall ? [4, -5, 0] : isMobile ? [8,-4,0] : isTablet ? [10, -5, 0] : [14, -4.2, 0],
+    reactLogoPosition : isSmall ? [-7,-7, 0] : isMobile ? [25, 4, -6] : isTablet ? [-5, -2, 0] : [12, 3, 0],
+    ringPosition : isSmall ? [-5, 7, 0] : isMobile ? [-14, 17, 8]  : isTablet ? [-23, 20, 0] : [-25, 19, 0],
+    targetPosition : isSmall
+    ? [-2, 0, -10]
+    : isMobile
+  ? [0,3,0]
+  : isTablet 
+  ? [6,0,-10] 
+  : [-4,1, -10],
+   
+    }
+  }
+
+export const experiences = [
+  {
+    id: 1,
+    name: 'Framer',
+    pos: 'Lead Web Developer',
+    duration: '2022 - Present',
+    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
+    icon: '/assets/framer.svg',
+    animation: 'victory',
+  },
+  {
+    id: 2,
+    name: 'Figma',
+    pos: 'Web Developer',
+    duration: '2020 - 2022',
+    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
+    icon: '/assets/figma.svg',
+    animation: 'clapping',
+  },
+  {
+    id: 3,
+    name: 'Notion',
+    pos: 'Junior Web Developer',
+    duration: '2019 - 2020',
+    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+    icon: '/assets/notion.svg',
+    animation: 'salute',
+  },
+];
+
+
+
+// export const calculateSizes = (isSmall, isMobile, isTablet) => {
+//   return {
+//     deskScale : isSmall ? 0.05 : isMobile ? 1 : 0.065,
+//     deskPosition : isMobile ? [0, 0, 0] : isTablet ? [0,0,0] : [1,-1, 5],
+//     deskRotation: isMobile ? [0.2,110,0.0] : isTablet ? [0.2,110,0] : [0.2,110,0],
+//     cubePosition : isSmall ? [4, -5, 0] : isMobile ? [8,-4,0] : isTablet ? [10, -5, 0] : [12, -4, 0],
+//     reactLogoPosition : isSmall ? [-7,-7, 0] : isMobile ? [25, 4, -6] : isTablet ? [-5, -2, 0] : [12, 3, 0],
+//     ringPosition : isSmall ? [-5, 7, 0] : isMobile ? [-14, 17, 8]  : isTablet ? [-23, 20, 0] : [-25, 19, 0],
+//     targetPosition : isSmall
+//     ? [-2, 0, -10]
+//     : isMobile
+//   ? [7,3,0]
+//   : isTablet 
+//   ? [0,0,-10] 
+//   : [-4,1, -10],
+   
+//     }
+//   }
