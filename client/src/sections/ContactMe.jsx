@@ -43,18 +43,18 @@ const ContactMe = () => {
   };
 
   return (
-    <section id="contactMe" className="c-space my-20">
+    <section id="contact" className="sm:px-10 px-5 my-0 w-screen">
       <div className="relative min-h-screen flex items-center justify-center flex-col">
         <img
           src="/assets/terminal.png"
           alt="terminal background"
           className="absolute inset-0 min-h-screen"
         />
-        <div className="contact-container">
-          <h3 className="head-text">
+        <div className="max-w-2xl relative z-10 sm:px-10 px-5 mt-12 pt-20">
+          <h3 className="sm:text-4xl text-3xl font-semibold text-neutral-content">
             Bring your vision to life—reach out through this form.
           </h3>
-          <p className="text-lg text-sky-200">
+          <p className="text-lg text-sky-200 mt-5">
             From launching a new website to finding the right talent for your
             company, I’m ready to help you succeed.
           </p>
@@ -62,15 +62,15 @@ const ContactMe = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col space-y-7"
+            className="mt-8 flex flex-col space-y-7"
           >
             <label htmlFor="name" className="space-y-3">
-              <span className="field-label">Full Name</span>
+              <span className="text-lg text-primary">Full Name</span>
               <input
                 type="text"
                 id="name"
                 name="name"
-                className="field-input"
+                className="w-full bg-slate-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-zinc-500 text-lg text-zinc-800 shadow-slate-200 shadow-2xl focus:outline-none mt-1"
                 placeholder="Jane Robinson"
                 value={form.name}
                 onChange={handleChange}
@@ -79,12 +79,12 @@ const ContactMe = () => {
             </label>
 
             <label htmlFor="email" className="space-y-3">
-              <span className="field-label">Email</span>
+              <span className="text-lg text-primary">Email</span>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className="field-input"
+                className="w-full bg-slate-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-zinc-500 text-lg text-zinc-800 shadow-slate-200 shadow-2xl focus:outline-none mt-1"
                 placeholder="JRobinson@tech-talk.org"
                 value={form.email}
                 onChange={handleChange}
@@ -93,11 +93,11 @@ const ContactMe = () => {
             </label>
 
             <label htmlFor="message" className="space-y-3">
-              <span className="field-label">Message</span>
+              <span className="text-lg text-primary">Message</span>
               <textarea
                 id="message"
                 name="message"
-                className="field-input"
+                className="w-full bg-slate-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-zinc-500 text-lg text-zinc-800 shadow-slate-200 shadow-2xl focus:outline-none mt-1"
                 placeholder="Hi, I want to hire you for..."
                 value={form.message}
                 onChange={handleChange}
@@ -107,7 +107,7 @@ const ContactMe = () => {
             </label>
 
             <button
-              className="field-btn"
+              className="bg-slate-500 px-5 py-2 min-h-12 rounded-lg shadow-slate-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3"
               type="submit"
               disabled={loading}
             >
@@ -115,7 +115,7 @@ const ContactMe = () => {
               <img
                 src="/assets/arrow-up.png"
                 alt="arrow-up"
-                className="field-btn_arrow"
+                className="bg-slate-500 px-5 py-2 min-h-12 rounded-lg shadow-slate-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3_arrow"
               />
             </button>
           </form>

@@ -148,7 +148,7 @@ export default function App() {
           saturation={1}
         />
       </div>
-      <div className="h-screen flex justify-center relative z-10">
+      <div id='lotus' className="h-screen flex justify-center relative z-10">
         <div className="h-7/8 w-9/13 overflow-hidden">
           <Canvas
             style={{ width: "100%", height: "100%" }}

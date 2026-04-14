@@ -24,8 +24,8 @@ const Projects = () => {
   };
 
   return (
-    <section className="c-space my-20">
-      <p className="head-text p-2">My Work</p>
+    <section id="projects" className="sm:px-10 px-5 bg-base-300">
+      <p className="sm:text-4xl text-3xl font-semibold text-neutral-content p-2">My Work</p>
 
       <div
         className="grid lg:grid-cols-2
@@ -62,8 +62,8 @@ shadow-black-200"
           <div className="flex items-center justify-between flex-wrap gap-5">
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, i) => (
-                <div className="tech-logo" key={i}>
-                  <img src={tag.path} alt={tag.name} className="" />
+                <div className="rounded-md p-2 flex justify-center items-center" key={i}>
+                  <img src={tag.path} alt={tag.name} className="size-20" />
                 </div>
               ))}
             </div>
@@ -79,7 +79,7 @@ shadow-black-200"
           </div>
           <div className="flex justify-between items-center mt-7">
             <button
-              className="arrow-btn"
+              className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient"
               onClick={() => handleNavigation("previous")}
             >
               <img
@@ -89,7 +89,7 @@ shadow-black-200"
               />
             </button>
             <button
-              className="arrow-btn"
+              className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient"
               onClick={() => handleNavigation("next")}
             >
               <img
