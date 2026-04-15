@@ -4,9 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-
 import { experiences } from "../data";
-
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 import { styles } from "../styles";

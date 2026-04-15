@@ -19,6 +19,10 @@ function Lotus() {
   return <primitive object={scene} />;
 }
 
+const font = useLoader(
+  FontLoader,
+  "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
+);
 
 export const HiddenText = forwardRef((props, ref) => {
  
@@ -42,11 +46,6 @@ export const HiddenText = forwardRef((props, ref) => {
   );
 });
 function LotusText() {
-  let font = useLoader(
-    FontLoader,
-    "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
-  );
-  
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Morgan  Adams", {
       font,
@@ -88,10 +87,6 @@ function LotusText() {
 }
 
 function TitleText() {
- let font = useLoader(
-    FontLoader,
-    "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
-  );
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Software Developer", {
       font,
@@ -134,8 +129,7 @@ function TitleText() {
 
 export function MovingLotus() {
   const flowerRef = useRef();
-  const textRef = useRef();
-  const titleRef = useRef();
+ 
   const hiddenRef = useRef();
   const { camera } = useThree();
 
@@ -153,9 +147,7 @@ export function MovingLotus() {
       const tilt = dist < 1.5 ? -Math.PI / 5.5 : 0;
       hiddenRef.current.rotation.x = tilt;
     }
-    // Text with my name
-    textRef.current.position.y = 0.67;
-    titleRef.current.position.y = 0.60;
+   
   });
 
   return (
@@ -166,6 +158,27 @@ export function MovingLotus() {
       <group ref={flowerRef}>
         <Lotus />
       </group>
+     
+
+    </>
+  );
+}
+export function BouncingText() {
+
+  const textRef = useRef();
+  const titleRef = useRef();
+ 
+  const { camera2 } = useThree();
+
+  useFrame(() => {
+  
+    textRef.current.position.y = 0.67;
+    titleRef.current.position.y = 0.60;
+  });
+
+  return (
+    <>
+ 
       <group ref={textRef}>
         <LotusText />      
       </group>
@@ -206,9 +219,9 @@ export default function App() {
             <ambientLight intensity={0.6} />
             <directionalLight position={[5, 10, 7.5]} intensity={0.8} />
             <Suspense fallback={<CanvasLoader />}>
-              <OrbitControls enablePan enableZoom enableDamping minDistance={1} maxDistance={3} />
+              <OrbitControls enableZoom enableDamping minDistance={1} maxDistance={3} />
               <MovingLotus />
-              {/* <BouncingText /> */}
+              <BouncingText />
             </Suspense>
 
             <Preload all />
