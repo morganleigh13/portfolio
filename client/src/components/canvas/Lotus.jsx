@@ -131,7 +131,7 @@ export function MovingLotus() {
 export default function App() {
   return (
     <>
-      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+      <div style={{ width: "100%", height: "110%", position: "absolute" }}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#ffffff"

@@ -25,11 +25,12 @@ const Projects = () => {
 
   return (
     <section id="projects" className="sm:px-10 px-5 bg-base-300">
-      <p className="sm:text-4xl text-3xl font-semibold text-neutral-content p-2">My Work</p>
+      <p className="sm:text-4xl text-3xl font-semibold text-neutral-content p-2">
+        My Work
+      </p>
 
       <div
-        className="grid lg:grid-cols-2
-grid-cols-1 mt-12 gap-5 w-full"
+        className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full"
       >
         <div
           className="flex flex-col gap-5
@@ -62,7 +63,10 @@ shadow-black-200"
           <div className="flex items-center justify-between flex-wrap gap-5">
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, i) => (
-                <div className="rounded-md p-2 flex justify-center items-center" key={i}>
+                <div
+                  className="rounded-md p-2 flex justify-center items-center"
+                  key={i}
+                >
                   <img src={tag.path} alt={tag.name} className="size-20" />
                 </div>
               ))}

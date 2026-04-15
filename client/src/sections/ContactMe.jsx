@@ -43,14 +43,14 @@ const ContactMe = () => {
   };
 
   return (
-    <section id="contact" className="sm:px-10 px-5 my-0 w-screen">
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
+    <section id="contact" className="sm:px-10 px-5 my-0 w-screen bg-base-300 flex items-center justify-center flex-col">
+      <div className="relative min-h-screen text-center justify-center flex w-1/2">
         <img
           src="/assets/terminal.png"
           alt="terminal background"
           className="absolute inset-0 min-h-screen"
         />
-        <div className="max-w-2xl relative z-10 sm:px-10 px-5 mt-12 pt-20">
+        <div className="max-w-3xl relative z-10 sm:px-10 px-5 mt-12 pt-20">
           <h3 className="sm:text-4xl text-3xl font-semibold text-neutral-content">
             Bring your vision to life—reach out through this form.
           </h3>
