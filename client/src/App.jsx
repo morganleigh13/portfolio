@@ -27,9 +27,9 @@ const App = () => {
   });
   
   return (
-    <div id="example">
+    <div id="h-auto overflow-visable">
       <Navbar hidden={hidden} />
-      <div className="content">
+      <div className="">
       <Lotus /> 
       <Experiance /> 
       <Projects />

@@ -50,12 +50,12 @@ function LotusText() {
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Morgan  Adams", {
       font,
-      size: 0.08,
-      height: 0.005,
+      size: 2.2,
+      depth: 3,
       curveSegments: 12,
       bevelEnabled: true,
-      bevelThickness: 0.006,
-      bevelSize: 0.003,
+      bevelThickness: 2,
+      bevelSize: 0.3,
       bevelOffset: 0,
       bevelSegments: 2,
     });
@@ -95,12 +95,12 @@ function TitleText() {
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Software Developer", {
       font,
-      size: 0.08,
-      height: 0.005,
+      size: 2.3,
+      depth: 3,
       curveSegments: 12,
       bevelEnabled: true,
-      bevelThickness: 0.006,
-      bevelSize: 0.003,
+      bevelThickness: 2,
+      bevelSize: 0.3,
       bevelOffset: 0,
       bevelSegments: 2,
     });
@@ -119,6 +119,12 @@ function TitleText() {
     const t = state.clock.getElapsedTime();
     titleMeshRef.current.position.y = -0.7 + Math.sin(t * 1) * 0.01;
   });
+  const geometry = new TextGeometry( 'Hello three.js!', {
+    font: font,
+    size: 8,
+    depth: 5,
+    curveSegments: 12
+  } );
 
   return (
     <mesh
@@ -155,7 +161,7 @@ export function MovingLotus() {
     }
     // Text with my name
     textRef.current.position.y = 0.67;
-    titleRef.current.position.y = 0.60;
+    titleRef.current.position.y = -1.3;
   });
 
   return (
@@ -198,7 +204,7 @@ export default function App() {
         />
       </div>
       <div id='lotus' className="h-screen flex justify-center relative z-10">
-        <div className="h-7/8 w-9/13 overflow-hidden">
+       
           <Canvas
             style={{ width: "100%", height: "100%" }}
             camera={{ position: [0, 0, 3], fov: 45 }}
@@ -213,7 +219,7 @@ export default function App() {
 
             <Preload all />
           </Canvas>
-        </div>
+        
       </div>
     </>
   );

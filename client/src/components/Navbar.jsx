@@ -1,19 +1,19 @@
 import { motion } from "motion/react";
 
-const Navbar = ({ hidden }) => {
+const Navbar = ({ hidden = "" }) => {
   console.log("hidden", hidden)
   return (
     <>
-      {/* {!hidden && ( */}
+      {!hidden && (
       <motion.header
-        className="header"
+        className="fixed top-0 left-0 right-0 z-100"
         animate={{
           y: hidden ? -140 : 0,
           opacity: hidden ? 0 : 1,
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="header-content bg-base-300 w-full rounded-md">
+        <div className="header-content flex items-center justify-between bg-base-300 w-full rounded-md">
           <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
           <label
             htmlFor="navbar-1-toggle"
@@ -91,7 +91,7 @@ const Navbar = ({ hidden }) => {
           </div>
         </div>
       </motion.header>
-      {/* )} */}
+       )} 
     </>
   );
 };
