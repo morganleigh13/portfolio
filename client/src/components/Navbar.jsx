@@ -13,7 +13,7 @@ const Navbar = ({ hidden = "" }) => {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="header-content flex items-center justify-between bg-base-300 w-full rounded-md">
+        <div className="header-content flex items-center justify-between bg-base-200 w-full rounded-md">
           <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
           <label
             htmlFor="navbar-1-toggle"
