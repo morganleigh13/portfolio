@@ -31,14 +31,14 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div className="vintage tracking-wider">
-      <h2
-          className='text-2xl font-bold text-center'
+      <h4
+          className='text-2xl text-primary font-bold text-center'
         >
-         Position: {experience.pos}
-        </h2>
-        <h3 className='text-white text-xl font-bold'>{experience.title}</h3>
+         {experience.pos}
+        </h4>
+        <h4 className='text-accent-content text-xl font-bold indent-3'>{experience.title}</h4>
         <h4
-          className='text-accent-content text-xl font-semibold text-center'
+          className='text-secondary text-xl font-semibold text-center'
          
         >
           {experience.name}

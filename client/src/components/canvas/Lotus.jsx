@@ -190,23 +190,6 @@ export default function LotusApp() {
   const dispatch = useDispatch();
   const interaction = useSelector((state) => state.animations.interaction);
 
-  // useEffect(() => {
-  //   const handleClick = () => {
-  //     dispatch(setInteraction(true))
-  //   };
-
-  //   // Add click event listener to the main container div
-  //   const mainContainer = document.getElementById('lotus');
-  //   mainContainer.addEventListener('click', handleClick);
-
-  //   return () => {
-  //     mainContainer.removeEventListener('click', handleClick);
-  //   };
-  // }, [interaction]);
-
-  useEffect(() => {
-    console.log(interaction)
-  }, [interaction])
 
   return (
     <>

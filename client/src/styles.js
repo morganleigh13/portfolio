@@ -6,7 +6,7 @@ const styles = {
     sectionHeadText:
       "text-neutral-content vintage font-bold  md:text-[90px] sm:text-[80px] xs:text-[50px] text-[40px]",
     sectionSubText:
-      "sm:text-[28px] text-[22px] text-secondary vintage  uppercase tracking-wider",
+      "sm:text-[28px] text-[22px] text-secondary vintage uppercase tracking-wider",
   };
   
   export { styles };
