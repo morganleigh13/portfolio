@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
- hidden: true
+ hidden: true,
+ interaction: false
 }
 
 const animationSlice = createSlice({
@@ -13,8 +14,11 @@ const animationSlice = createSlice({
     setHidden(state, action) {
      state.hidden = action.payload    
     },
+    setInteraction(state, action) {
+     state.interaction = action.payload    
+    },
   },
 });
 
-export const { setHidden} = animationSlice.actions;
+export const { setHidden, setInteration } = animationSlice.actions;
 export default animationSlice.reducer;

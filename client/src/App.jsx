@@ -1,14 +1,17 @@
 import { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { useScroll, useMotionValueEvent } from "motion/react";
+import { useDispatch, useSelector } from "react-redux";
 import Lotus from "./components/canvas/Lotus";
 import Navbar from "./components/Navbar";
 import Projects from "./sections/Projects";
 import ContactMe from "./sections/ContactMe";
 import Experiance from "./sections/Experiance";
-import "./App.css"
+import { setHidden } from "../redux/animationSlice";
+import "./App.css";
 
 const App = () => {
-  const [hidden, setHidden] = useState(true);
+  const dispatch = useDispatch();
+  const hidden = useSelector((state) => state.animations.hidden);
 
   const scrollContainer = useRef();
   const { scrollY } = useScroll();
@@ -17,23 +20,25 @@ const App = () => {
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const previous = scrollY.getPrevious() ?? 0;
-
-  if(current > 150 && current < previous) {
-      setHidden(false)
-    }else if(current > previous && current > 150) {
-      setHidden(true)
+    console.log(current);
+    if (current <= 150) {
+      dispatch(setHidden(true));
+    } else if (current > 150 && current < previous) {
+      dispatch(setHidden(false));
+    } else if (current > previous && current > 150) {
+      dispatch(setHidden(true));
     }
   });
-  
+
   return (
     <div id="h-auto overflow-visable">
       <Navbar hidden={hidden} />
       <div className="bg-base-300">
-      <Lotus /> 
-      <Experiance /> 
-      <Projects />
-      <ContactMe />
-      </div> 
+        <Lotus />
+        <Experiance />
+        <Projects />
+        <ContactMe />
+      </div>
     </div>
   );
 };
