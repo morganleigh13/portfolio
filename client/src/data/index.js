@@ -425,7 +425,7 @@ export const experiences = [
   {
     id: 2,
     name: 'Panda Pack',
-    pos: ' Project Tracker with Postgres',
+    pos: 'Project Tracker with Postgres',
     duration: '2026',
     title: "Created a Redux‑Toolkit powered project tracker that renders Admin, Manager, and Employee views. Implemented full CRUD using pgAdmin/PostgreSQL to store data. Styled with Tailwind and DaisyUI.",
     icon: '/assets/hand.svg',

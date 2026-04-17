@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const Navbar = ({ hidden = "" }) => {
+const Navbar = ({ hidden }) => {
   console.log("hidden", hidden)
   return (
     <>
@@ -13,7 +13,7 @@ const Navbar = ({ hidden = "" }) => {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="header-content flex items-center justify-between bg-base-200 w-full rounded-md">
+        <div className="vintage flex items-center justify-between bg-base-200 w-full rounded-md">
           <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
           <label
             htmlFor="navbar-1-toggle"
@@ -40,20 +40,20 @@ const Navbar = ({ hidden = "" }) => {
                   />
                 </svg>
               </label>
-              <div htmlFor="button" className="btn btn-ghost text-xl">
+              <div htmlFor="button" className="btn btn-ghost text-3xl hover:text-primary">
                 <a href="lotus">Morgan</a>
               </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-              <ul className="menu menu-horizontal px-1">
+              <ul className="menu menu-horizontal px-1 text-xl">
                 <li>
-                  <button>
+                  <button className="hover:text-secondary">
                     <a href="#projects">Projects</a>
                   </button>
                 </li>
 
                 <li>
-                  <button>
+                  <button className="hover:text-secondary">
                     <a href="#contact">Contact Me</a>
                   </button>
                 </li>

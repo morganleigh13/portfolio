@@ -8,7 +8,7 @@ import Experiance from "./sections/Experiance";
 import "./App.css"
 
 const App = () => {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   const scrollContainer = useRef();
   const { scrollY } = useScroll();
@@ -17,12 +17,11 @@ const App = () => {
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const previous = scrollY.getPrevious() ?? 0;
-    if (current > previous && current > 150) {
-      console.log("useMotionValueEvent", "previous:", previous, "current:", current, current > previous && current > 150)
-      setHidden(true);
-    } else {
-      console.log("useMotionValueEvent", "previous:", previous, "else")
-      setHidden(false);
+
+  if(current > 150 && current < previous) {
+      setHidden(false)
+    }else if(current > previous && current > 150) {
+      setHidden(true)
     }
   });
   

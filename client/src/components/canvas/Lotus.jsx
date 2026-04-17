@@ -14,7 +14,7 @@ function Lotus() {
   const { scene } = gltf;
 
   scene.scale.set(0.5, 0.5, -0.5); // scale down
-  scene.position.set(0, 0.5, 0); // move it a little lower
+  scene.position.set(0, 0.7, 0); // move it a little lower
 
   return <primitive object={scene} />;
 }
