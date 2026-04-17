@@ -20,5 +20,5 @@ const animationSlice = createSlice({
   },
 });
 
-export const { setHidden, setInteration } = animationSlice.actions;
+export const { setHidden, setInteraction } = animationSlice.actions;
 export default animationSlice.reducer;

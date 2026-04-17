@@ -1,11 +1,13 @@
 import * as THREE from "three";
-import React, { Suspense, useRef, useMemo, forwardRef } from "react";
+import React, { Suspense, useRef, useMemo, forwardRef, useEffect } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { Text, useGLTF } from "@react-three/drei";
 import LightRays from "../react-bits/LightRays";
+import { useDispatch, useSelector } from "react-redux";
+import { setInteraction } from "../../redux/animationSlice";
 import CanvasLoader from "../CanvasLoader";
 
 function Lotus() {
@@ -37,10 +39,11 @@ export const HiddenText = forwardRef((props, ref) => {
       renderOrder={5} // <‑‑ (optional) draw after the lotus
       depthTest={false}
     >
-      Ahamakara
+      Ahamakara Ahamakara Ahamakara Ahamakara Ahamakara Ahamakara Ahamakara
     </Text>
   );
 });
+
 function LotusText() {
   let font = useLoader(
     FontLoader,
@@ -156,7 +159,7 @@ export function MovingLotus() {
       flowerRef.current.getWorldPosition(flowerWorldPos);
       const dist = camera.position.distanceTo(flowerWorldPos);
       hiddenRef.current.scale.setScalar(dist < 1.5 ? 1 : 0);
-      const tilt = dist < 1.5 ? -Math.PI / 5.5 : 0;
+      const tilt = dist < 12.5 ? -Math.PI / 5.5 : 0;
       hiddenRef.current.rotation.x = tilt;
     }
     // Text with my name
@@ -183,7 +186,24 @@ export function MovingLotus() {
   );
 }
 
-export default function App() {
+export default function LotusApp() {
+  const dispatch = useDispatch();
+  const interaction = useSelector((state) => state.animations.interaction);
+
+  useEffect(() => {
+    const handleClick = () => {
+      dispatch(setInteraction(!interaction))
+    };
+
+    // Add click event listener to the main container div
+    const mainContainer = document.getElementById('lotus');
+    mainContainer.addEventListener('click', handleClick);
+
+    return () => {
+      mainContainer.removeEventListener('click', handleClick);
+    };
+  }, [interaction]);
+
   return (
     <>
       <div style={{ width: "100%", height: "110%", position: "absolute" }}>
@@ -212,9 +232,8 @@ export default function App() {
             <ambientLight intensity={0.6} />
             <directionalLight position={[5, 10, 7.5]} intensity={0.8} />
             <Suspense fallback={<CanvasLoader />}>
-              <OrbitControls enablePan enableZoom enableDamping minDistance={1} maxDistance={3} />
+            {!interaction ? null : <OrbitControls enablePan enableZoom enableDamping minDistance={1} maxDistance={3} /> }
               <MovingLotus />
-              {/* <BouncingText /> */}
             </Suspense>
 
             <Preload all />

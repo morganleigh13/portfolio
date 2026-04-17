@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import animationReducer from '../redux/animationSlice'
+import animationReducer from './redux/animationSlice'
 // import { listenerMiddleware } from './redux/localStorageMiddleware'
 
 

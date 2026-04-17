@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./sections/Projects";
 import ContactMe from "./sections/ContactMe";
 import Experiance from "./sections/Experiance";
-import { setHidden } from "../redux/animationSlice";
+import { setHidden } from "./redux/animationSlice";
 import "./App.css";
 
 const App = () => {
