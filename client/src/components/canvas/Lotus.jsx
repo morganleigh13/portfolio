@@ -35,11 +35,11 @@ export const HiddenText = forwardRef((props, ref) => {
       maxWidth={0.03}
       lineHeight={1}
       maxLineCount={1}
-      position={[0, 0.33, 0.5]}
+      position={[0, .39, 0.7]}
       renderOrder={5} // <‑‑ (optional) draw after the lotus
       depthTest={false}
     >
-      Ahamakara Ahamakara Ahamakara Ahamakara Ahamakara Ahamakara Ahamakara
+      Ahamakara 
     </Text>
   );
 });
@@ -158,7 +158,7 @@ export function MovingLotus() {
       const flowerWorldPos = new THREE.Vector3();
       flowerRef.current.getWorldPosition(flowerWorldPos);
       const dist = camera.position.distanceTo(flowerWorldPos);
-      hiddenRef.current.scale.setScalar(dist < 1.5 ? 1 : 0);
+      hiddenRef.current.scale.setScalar(dist < 2.5 ? 1 : 0);
       const tilt = dist < 12.5 ? -Math.PI / 5.5 : 0;
       hiddenRef.current.rotation.x = tilt;
     }
@@ -190,23 +190,28 @@ export default function LotusApp() {
   const dispatch = useDispatch();
   const interaction = useSelector((state) => state.animations.interaction);
 
+  // useEffect(() => {
+  //   const handleClick = () => {
+  //     dispatch(setInteraction(true))
+  //   };
+
+  //   // Add click event listener to the main container div
+  //   const mainContainer = document.getElementById('lotus');
+  //   mainContainer.addEventListener('click', handleClick);
+
+  //   return () => {
+  //     mainContainer.removeEventListener('click', handleClick);
+  //   };
+  // }, [interaction]);
+
   useEffect(() => {
-    const handleClick = () => {
-      dispatch(setInteraction(!interaction))
-    };
-
-    // Add click event listener to the main container div
-    const mainContainer = document.getElementById('lotus');
-    mainContainer.addEventListener('click', handleClick);
-
-    return () => {
-      mainContainer.removeEventListener('click', handleClick);
-    };
-  }, [interaction]);
+    console.log(interaction)
+  }, [interaction])
 
   return (
     <>
-      <div style={{ width: "100%", height: "110%", position: "absolute" }}>
+  
+      <div style={{ width: "100%", height: "110%", position: "absolute"}}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#ffffff"
@@ -232,7 +237,8 @@ export default function LotusApp() {
             <ambientLight intensity={0.6} />
             <directionalLight position={[5, 10, 7.5]} intensity={0.8} />
             <Suspense fallback={<CanvasLoader />}>
-            {!interaction ? null : <OrbitControls enablePan enableZoom enableDamping minDistance={1} maxDistance={3} /> }
+            {!interaction ? null : <OrbitControls enablePan enableZoom enableDamping minDistance={1} maxDistance={3} /> 
+           }
               <MovingLotus />
             </Suspense>
 
@@ -240,6 +246,9 @@ export default function LotusApp() {
           </Canvas>
         
       </div>
+      <button type='button' className="absolute top-5 right-5 border z-100 rounded-xl px-2 vintage tracking-widest text-secondary" onClick={() => dispatch(setInteraction(!interaction))}>
+        {interaction ? "Stop Interaction" : "Start Interaction"}
+      </button>
     </>
   );
 }

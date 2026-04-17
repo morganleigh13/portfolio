@@ -30,14 +30,19 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
+      <div className="vintage tracking-wider">
+      <h2
+          className='text-2xl font-bold text-center'
         >
-          {experience.company_name}
-        </p>
+         Position: {experience.pos}
+        </h2>
+        <h3 className='text-white text-xl font-bold'>{experience.title}</h3>
+        <h4
+          className='text-accent-content text-xl font-semibold text-center'
+         
+        >
+          {experience.name}
+        </h4>
       </div>
 
       {/* <ul className='mt-5 list-disc ml-5 space-y-2'>

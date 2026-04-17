@@ -15,6 +15,7 @@ const animationSlice = createSlice({
      state.hidden = action.payload    
     },
     setInteraction(state, action) {
+      console.log("action", action.payload)
      state.interaction = action.payload    
     },
   },

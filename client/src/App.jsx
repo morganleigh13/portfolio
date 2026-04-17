@@ -20,7 +20,6 @@ const App = () => {
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const previous = scrollY.getPrevious() ?? 0;
-    console.log(current);
     if (current <= 150) {
       dispatch(setHidden(true));
     } else if (current > 150 && current < previous) {
