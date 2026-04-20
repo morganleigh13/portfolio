@@ -66,6 +66,49 @@ const Navbar = ({ hidden }) => {
                     <a href="#contact">Contact Me</a>
                   </button>
                 </li>
+                <li>
+                <button class="flower-button">
+  <div class="wrapper">
+    <p class="text">Download Resume</p>
+    <div class="flower flower1">
+      <div class="petal one"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+    <div class="flower flower2">
+      <div class="petal one"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+    <div class="flower flower3">
+      <div class="petal one"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+    <div class="flower flower4">
+      <div class="petal one"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+    <div class="flower flower5">
+      <div class="petal one"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+    <div class="flower flower6">
+      <div class="petal one"></div>
+      <div class="petal two"></div>
+      <div class="petal three"></div>
+      <div class="petal four"></div>
+    </div>
+  </div>
+</button>
+                </li>
               </ul>
             </div>
             <div className="navbar-end">
