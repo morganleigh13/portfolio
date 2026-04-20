@@ -62,7 +62,7 @@ export const clientReviews = [
   },
 ];
 
-//Change to mine
+
 export const myProjects = [
   {
     title: 'Tech Talk - Blog',
@@ -424,21 +424,21 @@ export const experiences = [
   },
   {
     id: 2,
-    name: 'Project Tracker with Postgres',
-    pos: 'Personal Project',
-    duration: '2026',
-    title: "Created a Redux‑Toolkit powered project tracker that renders Admin, Manager, and Employee views. Implemented full CRUD using pgAdmin/PostgreSQL to store data. Styled with Tailwind and DaisyUI.",
-    icon: '/assets/hand.svg',
-    animation: 'salute',
-  },
-  {
-    id: 3,
     name: 'Live Streaming Hack-a-thon',
     pos: 'Team Lead',
     duration: '2025',
     title: " Designed a full‑stack Daily‑Check‑In app that earned the “Best Innovation” award during our first ever Hack-a-thon.",
     icon: '/assets/chat.svg',
     animation: 'victory',
+  },
+  {
+    id: 3,
+    name: 'Senior Developer',
+    pos: 'Pair Programming',
+    duration:'2025 - 2026',
+    title: "Hands on experiance working with and being mentored by a senior developer with over 25+ years of experiance. Updating frameworks such as changing Create React App applications to Vite. Working on a student portal, Wiki and being part of a team to create a donor-tracking CRM.",
+    icon: '/assets/hand.svg',
+    animation: 'salute',
   },
   {
     id: 4,
@@ -449,6 +449,7 @@ export const experiences = [
     icon: '/assets/donor.svg',
     animation: 'clapping',
   },
+ 
  
 ];
 

@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import messageRouter from "./messages/messageIndex";
 
 const app = express();
 app.use(express.json());
@@ -32,6 +33,8 @@ app.disable("x-powered-by");
 app.get("/", (req, res) => {
     res.send("Hello Morgans World!");
   });
+
+  app.use("/messages", messageRouter)
 
   try {
     const mongoURI = process.env.MONGO_URI || "";

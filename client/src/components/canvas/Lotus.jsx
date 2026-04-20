@@ -22,27 +22,46 @@ function Lotus() {
 }
 
 
-export const HiddenText = forwardRef((props, ref) => {
- 
-  return (
-    <Text
-      ref={ref}
-      // font={font} 
-      fontSize={0.026}
-      anchorX="center"
-      anchorY="middle"
-      color="#01df72"
-      maxWidth={0.03}
-      lineHeight={1}
-      maxLineCount={1}
-      position={[0, .39, 0.7]}
-      renderOrder={5} // <‑‑ (optional) draw after the lotus
-      depthTest={false}
-    >
-      Ahamakara 
-    </Text>
+
+function HiddenText(){
+  let font = useLoader(
+    FontLoader,
+    "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
   );
-});
+  
+  const hiddenTextGeom = useMemo(() => {
+    const g = new TextGeometry("Ahamakara", {
+      font,
+      size: .05,
+      depth: .05,
+      curveSegments: 12,
+      bevelEnabled: false,
+      bevelThickness: 1,
+      bevelSize: 0.09,
+      bevelOffset: 0,
+      bevelSegments: 1,
+    });
+    g.center();
+    return g;
+  }, [font]);
+
+  const textMat = useMemo(
+    () => new THREE.MeshStandardMaterial({ color: "#01df72" }),
+    []
+  );
+  const meshRef = useRef();
+
+  return (
+    <mesh
+      ref={meshRef}
+      geometry={hiddenTextGeom}
+      material={textMat}
+      position={[0, .39, .69]}
+      // optional fine‑tuning:
+      scale={0.5}
+    />
+  );
+} 
 
 function LotusText() {
   let font = useLoader(
@@ -67,7 +86,7 @@ function LotusText() {
   }, [font]);
 
   const textMat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: 0xffddaa }),
+    () => new THREE.MeshStandardMaterial({ color: "#ffd5a3" }),
     []
   );
   const meshRef = useRef();
@@ -99,10 +118,10 @@ function TitleText() {
     const g = new TextGeometry("Software Developer", {
       font,
       size: 2.3,
-      depth: 3,
+      depth: 1.5,
       curveSegments: 12,
       bevelEnabled: true,
-      bevelThickness: 2,
+      bevelThickness: 1,
       bevelSize: 0.3,
       bevelOffset: 0,
       bevelSegments: 2,
@@ -112,7 +131,7 @@ function TitleText() {
   }, [font]);
 
   const mat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#10b981" }),
+    () => new THREE.MeshStandardMaterial({ color: "#a29dff" }),
     []
   );
   const titleMeshRef = useRef();
@@ -158,7 +177,7 @@ export function MovingLotus() {
       const flowerWorldPos = new THREE.Vector3();
       flowerRef.current.getWorldPosition(flowerWorldPos);
       const dist = camera.position.distanceTo(flowerWorldPos);
-      hiddenRef.current.scale.setScalar(dist < 2.5 ? 1 : 0);
+      hiddenRef.current.scale.setScalar(dist < 3 ? 1 : 0);
       const tilt = dist < 12.5 ? -Math.PI / 5.5 : 0;
       hiddenRef.current.rotation.x = tilt;
     }

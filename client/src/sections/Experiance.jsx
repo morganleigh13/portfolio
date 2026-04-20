@@ -13,6 +13,7 @@ import "react-vertical-timeline-component/style.min.css";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
+  
       contentStyle={{
         background: "var(--color-accent)",
         color: "var(--color-accent-content)",
@@ -61,7 +62,7 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   return (
-    <div className="bg-base-300">
+    <div id="experiance" className="bg-base-300">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far

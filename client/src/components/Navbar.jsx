@@ -45,10 +45,15 @@ const Navbar = ({ hidden }) => {
               </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-              <ul className="menu menu-horizontal px-1 text-xl">
+              <ul className="menu menu-horizontal px-1 text-xl gap-3">
                 <li>
                   <button className="hover:text-secondary">
                     <a href="#projects">Projects</a>
+                  </button>
+                </li>
+                <li>
+                  <button className="hover:text-secondary">
+                    <a href="#experiance">Experiance</a>
                   </button>
                 </li>
 
