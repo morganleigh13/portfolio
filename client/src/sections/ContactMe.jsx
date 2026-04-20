@@ -26,9 +26,9 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="sm:px-10 px-5 w-screen bg-base-300 flex items-end justify-center flex-col vintage tracking-wider py-50"
+      className="sm:px-10 px-5 w-screen bg-base-300 flex items-end justify-center flex-col vintage tracking-wider"
     >
-      
+
       
       <div className="relative text-center justify-center flex w-1/3 max-w-5xl">
         <PixelCard>

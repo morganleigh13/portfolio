@@ -47,6 +47,11 @@ const Navbar = ({ hidden }) => {
               <ul className="menu menu-horizontal px-1 text-xl gap-3">
                 <li>
                   <button className="hover:text-secondary">
+                    <a href="#frameworks">Frameworks</a>
+                  </button>
+                </li>
+                <li>
+                  <button className="hover:text-secondary">
                     <a href="#projects">Projects</a>
                   </button>
                 </li>

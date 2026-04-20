@@ -74,7 +74,7 @@ shadow-black-200"
                   className="rounded-md p-2 flex justify-center items-center"
                   key={i}
                 >
-                  <img src={tag.path} alt={tag.name} className="size-20" />
+                  <img src={tag.path} alt={tag.name} className="size-8" />
                 </div>
               ))}
             </div>

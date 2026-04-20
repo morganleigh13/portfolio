@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./sections/Projects";
 import ContactMe from "./sections/ContactMe";
 import Experiance from "./sections/Experiance";
+import Frameworks from "./sections/Frameworks";
 import { setHidden } from "./redux/animationSlice";
 import "./App.css";
 
@@ -32,10 +33,11 @@ const App = () => {
   return (
     <div id="h-auto overflow-visable">
       <Navbar hidden={hidden} />
-      <div className="bg-base-300">
+      <div className="bg-base-300 space-y-30">
         <Lotus />
-        <Experiance />
+        <Frameworks />
         <Projects />
+        <Experiance />
         <ContactMe />
       </div>
     </div>

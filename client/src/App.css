@@ -1,9 +1,12 @@
+body {
+  overflow-x: hidden;
+}
 /* FONTS */
 
 .vintage {
   font-family: "Akaya Telivigala";
 }
-
+/*  Navbar and horizontal scroll*/
 
 @media (max-width: 600px) {
   nav {
@@ -13,10 +16,61 @@
   nav a {
       font-size: 13px;
   }
+  .sticky-wrapper {
+    width: 280px;
+}
+
+.gallery {
+    gap: 15px;
+}
+
+.gallery-item {
+    width: 280px;
+    height: 350px;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
   .header {
       transition: none;
   }
+  .gallery {
+    transform: none !important;
 }
+.scroll-container {
+    height: auto;
+}
+.sticky-wrapper {
+    position: relative;
+    height: auto;
+    width: 100%;
+    overflow-x: auto;
+    padding: 50px 0;
+}
+}
+
+/* Horizontal Scroll */
+
+.gallery-item {
+  background-image: var(--item-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to bottom,
+      transparent 60%,
+      var(--item-color)
+  );
+  mix-blend-mode: multiply;
+}
+
+
+
+
+
+
