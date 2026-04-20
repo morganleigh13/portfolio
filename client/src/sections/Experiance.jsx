@@ -13,19 +13,19 @@ import "react-vertical-timeline-component/style.min.css";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-  
       contentStyle={{
-        background: "var(--color-accent)",
-        color: "var(--color-accent-content)",
+        background: "var(--color-neutral)",
+        color: "var(--color-neutral-content)",
+        
       }}
-      contentArrowStyle={{ borderRight: "2px solid var(--color-primary)" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      contentArrowStyle={{ borderRight: "2px solid var(--color-primary)"}}
+      date={experience.duration}
+      iconStyle={{ background: "var(--color-base-100)"}}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img
             src={experience.icon}
-            alt={experience.company_name}
+            alt={experience.name}
             className='w-[80%] h-[70%] object-contain'
           />
         </div>
@@ -64,9 +64,9 @@ const Experience = () => {
   return (
     <div id="experiance" className="bg-base-300">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
+        {/* <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
-        </p>
+        </p> */}
         <h2 className={`${styles.sectionHeadText} text-center`}>
           Work Experience.
         </h2>

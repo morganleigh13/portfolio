@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import messageService from "./messageService";
 
 const initialState = {
-  loading: true,
+  loading: false,
   error: null,
   success: "",
   messages: [],

@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import messageRouter from "./messages/messageIndex";
+import messageRouter from "./messages/messageIndex.js";
 
 const app = express();
 app.use(express.json());

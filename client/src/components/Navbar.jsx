@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 
 const Navbar = ({ hidden }) => {
-  console.log("hidden", hidden)
   return (
     <>
       {!hidden && (

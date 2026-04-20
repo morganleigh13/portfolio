@@ -226,14 +226,14 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   return (
     <div
       ref={containerRef}
-      className={`min-h-fit w-full relative overflow-hidden grid justify-center aspect-[4/5] border border-base-100 rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none ${className}`}
+      className={`min-h-fit w-auto h-auto relative overflow-hidden grid justify-center border border-base-100 rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onFocus={finalNoFocus ? undefined : onFocus}
       onBlur={finalNoFocus ? undefined : onBlur}
       tabIndex={finalNoFocus ? -1 : 0}
     >
-      <canvas className="w-full h-full block absolute" ref={canvasRef} />
+      <canvas className="w-auto h-auto block absolute" ref={canvasRef} />
       {children}
     </div>
   );

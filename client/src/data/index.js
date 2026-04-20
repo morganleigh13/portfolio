@@ -421,6 +421,7 @@ export const experiences = [
     title: "Mentored 20+ peers from beginning coders into MERN full stack web developers. Co‑authored a comprehensive class wiki that now serves as the go‑to resource for all future students.",
     icon: '/assets/p.svg',
     animation: 'salute',
+    iconBg: "var(--color-base-100)"
   },
   {
     id: 2,
