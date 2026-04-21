@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PixelCard from "../components/react-bits/PixelCard";
 import { createMessage } from "../redux/messageSlice";
+import toast from "react-hot-toast"
+import { LuGalleryHorizontal } from "react-icons/lu";
 
 const ContactMe = () => {
   const dispatch = useDispatch();
@@ -17,6 +19,16 @@ const ContactMe = () => {
   useEffect(() => {
     // console.log(form)
   }, [form]);
+
+  const handleFormat = (val) => {
+    if (val.length === 3 || val.length % 5 === 0) {
+      val += '-';
+    } else if (val.length > 3 && val.length % 2 === 0) {
+      val = `${val.slice(0, -1)}-${val.slice(-1)}`;
+    }
+    return val;
+  }
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,8 +69,7 @@ const ContactMe = () => {
                   placeholder="Jane Robinson"
                   value={form.fullName}
                   onChange={(e) =>
-                    setForm({ ...form, fullName: e.target.value })
-                  }
+                    setForm({ ...form, fullName: e.target.value })}
                   required
                 />
              
@@ -70,10 +81,12 @@ const ContactMe = () => {
                   type="phone"
                   id="phone"
                   name="phone"
+                  pattern={`[0-9]*`}
                   className="w-full bg-slate-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-zinc-500 text-lg text-zinc-800 shadow-slate-200 shadow-2xl focus:outline-none mt-1"
                   placeholder="480-456-7890"
-                  value={form.phone}
+                  value={handleFormat(form.phone)}             
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  maxLength={12}
                   required
                 />
              

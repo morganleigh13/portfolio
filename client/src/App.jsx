@@ -8,6 +8,7 @@ import ContactMe from "./sections/ContactMe";
 import Experiance from "./sections/Experiance";
 import Frameworks from "./sections/Frameworks";
 import { setHidden } from "./redux/animationSlice";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 
 const App = () => {
@@ -32,6 +33,41 @@ const App = () => {
 
   return (
     <div id="h-auto overflow-visable">
+      <Toaster
+        containerStyle={{
+          top: 70,
+          left: 20,
+          bottom: 20,
+          right: 20,
+        }}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 6000,
+          removeDelay: 1000,
+
+          // Default options for specific types
+          success: {
+            icon: "🎉",
+            className:
+              "text-lg text-success-content font-extrabold tracking-wider",
+            style: {
+              border: "4px solid green",
+              backgroundColor: "var(--color-success)",
+            },
+          },
+          error: {
+            duration: 7000,
+            icon: "💥👎",
+            className:
+              "text-lg text-error-content font-extrabold tracking-wider",
+            style: {
+              border: "4px solid red",
+              backgroundColor: "var(--color-error)",
+            },
+          },
+        }}
+      />
       <Navbar hidden={hidden} />
       <div className="bg-base-300 space-y-30">
         <Lotus />

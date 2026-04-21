@@ -4,30 +4,8 @@ import { ImBlogger2 } from "react-icons/im";
 import { LuHandHeart } from "react-icons/lu";
 import { SiFoodpanda } from "react-icons/si";
 
-export const navLinks = [
-  {
-    id: 1,
-    name: 'Lotus',
-    href: '#lotus',
-  },
-  {
-    id: 2,
-    name: 'Projects',
-    href: '#projects',
-  },
-  {
-    id: 3,
-    name: 'Work',
-    href: '#work',
-  },
-  {
-    id: 4,
-    name: 'Contact',
-    href: '#contact',
-  },
-];
 
-export const clientReviews = [
+export const reviews = [
   {
     id: 1,
     name: 'Emily Johnson',
@@ -452,6 +430,63 @@ export const experiences = [
   },
  
  
+];
+export const items = [
+  {
+    id: 1,
+    color: "#ff0088",
+    label: "JavaScript",
+    image: "/frameworks/javascript.png",
+  },
+  { id: 2, color: "#dd00ee", label: "React", image: "/frameworks/react.svg" },
+  {
+    id: 3,
+    color: "#9911ff",
+    label: "Redux Toolkit",
+    image: "/frameworks/redux.png",
+  },
+  {
+    id: 4,
+    color: "#1d4ed8",
+    label: "TailwindCSS",
+    image: "/frameworks/tailwind.png",
+  },
+  { id: 5, color: "#fbbf24", label: "DaisyUI", image: "/frameworks/daisy.jpg" },
+  {
+    id: 6,
+    color: "#22c55e",
+    label: "MongoDB",
+    image: "/frameworks/mongodb.png",
+  },
+  {
+    id: 7,
+    color: "#a855f7",
+    label: "PostgreSQL",
+    image: "/frameworks/postgres.png",
+  },
+  { id: 8, color: "#0cdcf7", label: "Faker", image: "/frameworks/faker.jpg" },
+  {
+    id: 9,
+    color: "#16a34a",
+    label: "Node.js",
+    image: "/frameworks/nodejs.png",
+  },
+  { id: 10, color: "#be123c", label: "Socket.io", image: "/frameworks/socket-io.svg" },
+  { id: 11, color: "#ea580c", label: "gitLab", image: "/frameworks/git.png" },
+  { id: 12, color: "#0cdcf7", label: "Agile", image: "/handshake.svg" },
+  {
+    id: 13,
+    color: "#dc2626",
+    label: "Three.js",
+    image: "/frameworks/threejs.svg",
+  },
+  {
+    id: 14,
+    color: "#fbbf24",
+    label: "Motion",
+    image: "/frameworks/motion.png",
+  },
+  { id: 15, color: "#52525b", label: "Ollama", image: "/frameworks/llama.jpg" },
 ];
 
 

@@ -50,7 +50,6 @@ body {
 }
 
 /* Horizontal Scroll */
-
 .gallery-item {
   background-image: var(--item-image);
   background-size: auto;
@@ -70,37 +69,6 @@ body {
 }
 
 /* FLOWER BUTTON */
-
-.flower-button {
-  height: 4em;
-  width: 12em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 0px solid black;
-  cursor: pointer;
-}
-
-.wrapper {
-  height: 2em;
-  width: 8em;
-  position: relative;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text {
-  font-size: 17px;
-  z-index: 1;
-  color: #000;
-  padding: 4px 12px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.7);
-  transition: all 0.5s ease;
-}
 
 .flower {
   display: grid;
