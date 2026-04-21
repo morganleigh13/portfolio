@@ -451,6 +451,12 @@ export const items = [
     label: "TailwindCSS",
     image: "/frameworks/tailwind.png",
   },
+  {
+    id: 16,
+    color: "#dd00ee",
+    label: "Bootstrap",
+    image: "/frameworks/bootstrap.svg",
+  },
   { id: 5, color: "#fbbf24", label: "DaisyUI", image: "/frameworks/daisy.jpg" },
   {
     id: 6,

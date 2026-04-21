@@ -75,6 +75,9 @@ const Navbar = ({ hidden }) => {
                   </li>
                   <li>
                     <button class="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
+                    <a href="./src/assets/Resume.docx" download="Resume">
+            
+
                       <div class="relative bg-transparent flex justify-center items-center">
                         <p class="bg-white opacity-75 transition-all duration-500 ease-in rounded-lg z-1 text-black text-xl">
                           Download Resume
@@ -116,6 +119,7 @@ const Navbar = ({ hidden }) => {
                           <div class="petal four"></div>
                         </div>
                       </div>
+                      </a>
                     </button>
                   </li>
                 </ul>
@@ -128,8 +132,8 @@ const Navbar = ({ hidden }) => {
                 />
               </div>
             </div>
-            <div className="collapse-content lg:hidden z-1 inset-0">
-              <ul className="menu">
+            <div className="collapse-content lg:hidden z-1 absolute top-12 left-0 bg-black">
+              <ul className="menu z-10 relative">
                 <li>
                   <button>Item 1</button>
                 </li>

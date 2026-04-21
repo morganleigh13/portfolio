@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 const DemoComputer = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models/computer.glb');
+  console.log(nodes, materials)
 
   const txt = useVideoTexture(props.texture ? props.texture : '/websites/recordings/tech-talk.mp4');
 
@@ -26,7 +27,7 @@ const DemoComputer = (props) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
+      <group name="Sketchfab_Scene">
         <mesh
           name="monitor-screen"
           // castShadow
@@ -940,7 +941,7 @@ const DemoComputer = (props) => {
             scale={0.963}
           />
         </group>
-        <group
+        {/* <group
           name="Monitor-B-_computer_0"
           position={[0.266, 1.132, 0.051]}
           rotation={[0, -0.033, 0]}
@@ -1001,7 +1002,7 @@ const DemoComputer = (props) => {
             geometry={nodes['Monitor-B-_computer_0_8'].geometry}
             material={materials.Material_37}
           />
-        </group>
+        </group> */}
       </group>
     </group>
   );
