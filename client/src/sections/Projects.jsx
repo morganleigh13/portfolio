@@ -1,8 +1,8 @@
-import gsap from 'gsap';
+import gsap from "gsap";
 import { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
-import { useGSAP } from '@gsap/react';
+import { useGSAP } from "@gsap/react";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/canvas/DemoComputer";
 import { myProjects } from "../data/index";
@@ -11,7 +11,7 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [projectIndex, setProjectIndex] = useState(0);
- const currentProject = myProjects[projectIndex];
+  const currentProject = myProjects[projectIndex];
   const IconComponent = myProjects[projectIndex].logo;
 
   const handleNavigation = (direction) => {
@@ -25,23 +25,23 @@ const Projects = () => {
   };
 
   useGSAP(() => {
-    gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
+    gsap.fromTo(
+      `.animatedText`,
+      { opacity: 0 },
+      { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
+    );
   }, [projectIndex]);
 
-
   return (
-    <section id="projects" className="sm:px-10 px-5 bg-base-300 vintage">
-      <p className="sm:text-5xl text-4xl font-semibold text-secondary tracking-wide p-2">
-        Personal Projects
-      </p>
-
-      <div
-        className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full"
-      >
+    <section
+      id="projects"
+      className="sm:px-10 p-5 bg-base-300 vintage pt-3 projects-background"
+    >
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 w-full ">
         <div
           className="flex flex-col gap-5
 relative sm:p-10 py-10 px-5 shadow-2xl
-shadow-black-200"
+shadow-black"
         >
           <div className="absolute top-0 right-0">
             <img
@@ -64,8 +64,12 @@ shadow-black-200"
             <p className="text-3xl text-info font-semibold animatedText p-1 ">
               {currentProject.title}
             </p>
-            <p className="animatedText text-2xl mx-2 indent-3">{currentProject.desc}</p>
-            <p className="animatedText  text-info-content text-2xl indent-4">{currentProject.subdesc}</p>
+            <p className="animatedText text-2xl mx-2 indent-3">
+              {currentProject.desc}
+            </p>
+            <p className="animatedText  text-info-content text-2xl indent-4">
+              {currentProject.subdesc}
+            </p>
           </div>
           <div className="flex items-center justify-between flex-wrap gap-5">
             <div className="flex items-center gap-3">
@@ -84,7 +88,9 @@ shadow-black-200"
               rel="noreferrer"
               className="flex gap-3 items-baseline"
             >
-              <p className="text-info contrast-200 text-xl">Go To gitLab Repo</p>
+              <p className="text-info contrast-200 text-xl">
+                Go To gitLab Repo
+              </p>
               <img src="/assets/arrow-up.png" alt="arrow" />
             </a>
           </div>
@@ -111,7 +117,7 @@ shadow-black-200"
             </button>
           </div>
         </div>
-        <div className="border border-accent bg-base-300 rounded-lg h-96 md:h-full">
+        <div className="border border-secondary/60 shadow-[5px_4px_6px_var(--color-secondary)] bg-base-300 rounded-lg h-96 md:h-full">
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />

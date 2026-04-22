@@ -69,7 +69,7 @@ const App = () => {
         }}
       />
       <Navbar hidden={hidden} />
-      <div className="bg-base-300 space-y-30">
+      <div className="bg-base-300">
         <Lotus />
         <Frameworks />
         <Projects />

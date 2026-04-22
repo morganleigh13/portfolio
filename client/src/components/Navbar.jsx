@@ -20,7 +20,7 @@ const Navbar = ({ hidden }) => {
             />
             <label
               htmlFor="navbar-1-toggle"
-              className="fixed inset-0 hidden max-lg:peer-checked:block"
+              className="absolute inset-0 hidden max-lg:peer-checked:block"
             ></label>
             <div className="collapse-title navbar">
               <div className="navbar-start">
@@ -51,7 +51,95 @@ const Navbar = ({ hidden }) => {
                 </div>
               </div>
               <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-xl gap-3">
+                <ul className="menu menu-horizontal px-1 text-xl gap-5">
+                  <li>
+                    <button className="hover:text-secondary">
+                      <a href="#frameworks">Frameworks</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button className="hover:text-secondary">
+                      <a href="#projects">Projects</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button className="hover:text-secondary">
+                      <a href="#experiance">Experiance</a>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button className="hover:text-secondary">
+                      <a href="#contact">Contact Me</a>
+                    </button>
+                  </li>
+                
+                  <li>
+                    <button className="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
+                    <a href="./src/assets/online-resume.pdf" target="_blank">
+            
+
+                      <div className="relative bg-transparent flex justify-center items-center">
+                        <p className="bg-sky-200 opacity-75 transition-all duration-500 ease-in rounded-lg z-1 text-black text-lg tracking-wider px-.5">
+                        View Resume
+                        </p>
+                        <div className="flower flower1">
+                          <div className="petal one"></div>
+                          <div className="petal two"></div>
+                          <div className="petal three"></div>
+                          <div className="petal four"></div>
+                        </div>
+                        <div className="flower flower2">
+                          <div className="petal one"></div>
+                          <div className="petal two"></div>
+                          <div className="petal three"></div>
+                          <div className="petal four"></div>
+                        </div>
+                        <div className="flower flower3">
+                          <div className="petal one"></div>
+                          <div className="petal two"></div>
+                          <div className="petal three"></div>
+                          <div className="petal four"></div>
+                        </div>
+                        <div className="flower flower4">
+                          <div className="petal one"></div>
+                          <div className="petal two"></div>
+                          <div className="petal three"></div>
+                          <div className="petal four"></div>
+                        </div>
+                        <div className="flower flower5">
+                          <div className="petal one"></div>
+                          <div className="petal two"></div>
+                          <div className="petal three"></div>
+                          <div className="petal four"></div>
+                        </div>
+                        <div className="flower flower6">
+                          <div className="petal one"></div>
+                          <div className="petal two"></div>
+                          <div className="petal three"></div>
+                          <div className="petal four"></div>
+                        </div>
+                      </div>
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div className="navbar-end">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="input input-bordered w-64 lg:w-auto"
+                />
+              </div>
+            </div>
+            <div className="collapse-content lg:hidden absolute top-20 left-0 bg-base-100 rounded-xl overflow-visible z-100">
+            <ul className="menu px-1 text-xl gap-5">
+                  <li>
+                    <button className="hover:text-secondary">
+                      <a href="#morgan">Morgan</a>
+                    </button>
+                  </li>
                   <li>
                     <button className="hover:text-secondary">
                       <a href="#frameworks">Frameworks</a>
@@ -74,84 +162,13 @@ const Navbar = ({ hidden }) => {
                     </button>
                   </li>
                   <li>
-                    <button class="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
+                    <button className="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
                     <a href="./src/assets/Resume.docx" download="Resume">
-            
-
-                      <div class="relative bg-transparent flex justify-center items-center">
-                        <p class="bg-white opacity-75 transition-all duration-500 ease-in rounded-lg z-1 text-black text-xl">
-                          Download Resume
-                        </p>
-                        <div class="flower flower1">
-                          <div class="petal one"></div>
-                          <div class="petal two"></div>
-                          <div class="petal three"></div>
-                          <div class="petal four"></div>
-                        </div>
-                        <div class="flower flower2">
-                          <div class="petal one"></div>
-                          <div class="petal two"></div>
-                          <div class="petal three"></div>
-                          <div class="petal four"></div>
-                        </div>
-                        <div class="flower flower3">
-                          <div class="petal one"></div>
-                          <div class="petal two"></div>
-                          <div class="petal three"></div>
-                          <div class="petal four"></div>
-                        </div>
-                        <div class="flower flower4">
-                          <div class="petal one"></div>
-                          <div class="petal two"></div>
-                          <div class="petal three"></div>
-                          <div class="petal four"></div>
-                        </div>
-                        <div class="flower flower5">
-                          <div class="petal one"></div>
-                          <div class="petal two"></div>
-                          <div class="petal three"></div>
-                          <div class="petal four"></div>
-                        </div>
-                        <div class="flower flower6">
-                          <div class="petal one"></div>
-                          <div class="petal two"></div>
-                          <div class="petal three"></div>
-                          <div class="petal four"></div>
-                        </div>
-                      </div>
+            Download Resume
                       </a>
                     </button>
                   </li>
                 </ul>
-              </div>
-              <div className="navbar-end">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="input input-bordered w-64 lg:w-auto"
-                />
-              </div>
-            </div>
-            <div className="collapse-content lg:hidden z-1 absolute top-12 left-0 bg-black">
-              <ul className="menu z-10 relative">
-                <li>
-                  <button>Item 1</button>
-                </li>
-                <li>
-                  <button>Parent</button>
-                  <ul>
-                    <li>
-                      <button>Submenu 1</button>
-                    </li>
-                    <li>
-                      <button>Submenu 2</button>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <button>Item 3</button>
-                </li>
-              </ul>
             </div>
           </div>
         </motion.header>

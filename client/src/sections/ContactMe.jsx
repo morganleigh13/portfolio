@@ -38,7 +38,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="sm:px-10 px-5 w-screen bg-base-300 flex items-end justify-center flex-col vintage tracking-wider"
+      className="sm:px-10 p-5 w-screen bg-base-300 flex items-end justify-center flex-col vintage tracking-wider contact-background"
     >
 
       

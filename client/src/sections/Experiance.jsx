@@ -22,11 +22,11 @@ const ExperienceCard = ({ experience }) => {
       date={experience.duration}
       iconStyle={{ background: "var(--color-base-100)"}}
       icon={
-        <div className='flex justify-center items-center w-full h-full'>
+        <div className='flex justify-center items-center w-full h-full p-2'>
           <img
             src={experience.icon}
             alt={experience.name}
-            className='w-[80%] h-[70%] object-contain'
+            className='w-[100%] h-[100%] object-contain'
           />
         </div>
       }
@@ -62,7 +62,7 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   return (
-    <div id="experiance" className="bg-base-300">
+    <div id="experiance" className="bg-base-300 experiance-background rounded-xl">
       <motion.div variants={textVariant()}>
         {/* <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
@@ -72,7 +72,7 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
+      <div className='flex flex-col'>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard

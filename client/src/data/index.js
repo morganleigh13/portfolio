@@ -70,7 +70,7 @@ export const myProjects = [
       {
       id: 3,
         name: 'RTK',
-        path: '/frameworks/redux.png',
+        path: '/frameworks/redux.svg',
       },
       {
         id: 5, 
@@ -112,7 +112,7 @@ export const myProjects = [
       {
         id: 3,
           name: 'RTK',
-          path: '/frameworks/redux.png',
+          path: '/frameworks/redux.svg',
         },
         {
           id: 4,
@@ -132,7 +132,7 @@ export const myProjects = [
         {
           id: 7,
           name: 'Faker',
-          path: '/frameworks/faker.jpg',
+          path: '/frameworks/faker.svg',
         },
     ],
   },
@@ -199,12 +199,12 @@ export const myProjects = [
       {
         id: 2,
           name: 'RTK',
-          path: '/frameworks/redux.png',
+          path: '/frameworks/redux.svg',
         },
       {
         id: 3,
         name: 'TailwindCSS',
-        path: '/frameworks/tailwind.png',
+        path: '/frameworks/tailwind.svg',
       },
       {
         id: 4,
@@ -224,7 +224,7 @@ export const myProjects = [
       {
         id: 7,
         name: 'Faker',
-        path: '/frameworks/faker.jpg',
+        path: '/frameworks/faker.svg',
       },
     ],
   },
@@ -251,12 +251,12 @@ export const myProjects = [
       {
         id: 2,
           name: 'RTK',
-          path: '/frameworks/redux.png',
+          path: '/frameworks/redux.svg',
         },
       {
         id: 3,
         name: 'TailwindCSS',
-        path: '/frameworks/tailwind.png',
+        path: '/frameworks/tailwind.svg',
       },
       {
         id: 4,
@@ -271,15 +271,15 @@ export const myProjects = [
       {
         id: 6,
         name: 'Faker',
-        path: '/frameworks/faker.jpg',
+        path: '/frameworks/faker.svg',
       },
     ],
   },
   {
     title: 'Panda Pack- Project Tracker with Postgres',
-    desc: 'NEED TO DO',
+    desc: 'Project Tracker is a web application that helps track orders for various recyclable materials. The platform allows admins to place orders, manage employee data, and monitor progress using a D3 chart. Employees can also track their progress and complete tasks.  The platform has different dashboards for admins and employees, with logic to create custom dashboards for different types of employees.',
     subdesc:
-      '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',
+      'This app. uses PostgreSQL as the database, Redux Toolkit for state management, JWT and express for authentication, and Argon2 login for password protection.',
     href: "http://192.168.1.27/madams/panda-pack",
     texture: '/websites/recordings/panda-pack.mp4',
     logo: SiFoodpanda,
@@ -298,12 +298,12 @@ export const myProjects = [
       {
         id: 2,
           name: 'RTK',
-          path: '/frameworks/redux.png',
+          path: '/frameworks/redux.svg',
         },
       {
         id: 3,
         name: 'TailwindCSS',
-        path: '/frameworks/tailwind.png',
+        path: '/frameworks/tailwind.svg',
       },
       {
         id: 4,
@@ -318,15 +318,15 @@ export const myProjects = [
       {
         id: 6,
         name: 'Faker',
-        path: '/frameworks/faker.jpg',
+        path: '/frameworks/faker.svg',
       },
     ],
   },
   {
     title: 'Frosting - E-Commerce',
-    desc: 'NEED TO DO',
+    desc: 'Frosting is an e-commerce site that sells jewelry and purses. The platform allows customers to browse products by category, sort the page by various options, add items to their cart, and remove them from the cart. The platform also features validation for legitimate credit cards, enhancing overall security and trustworthiness.',
     subdesc:
-      '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',
+      'It uses RTK tailwind DaisyUI, MongoDB as the database, and Faker to generate fake data. Additionally, there is two-factor authentication for credit card transactions, ensuring a secure payment process.',
     href: "http://192.168.1.27/madams/frosting",
     texture: '/websites/recordings/frosting.mp4',
     logo: GiJewelCrown,
@@ -345,12 +345,12 @@ export const myProjects = [
       {
         id: 2,
           name: 'RTK',
-          path: '/frameworks/redux.png',
+          path: '/frameworks/redux.svg',
         },
       {
         id: 3,
         name: 'TailwindCSS',
-        path: '/frameworks/tailwind.png',
+        path: '/frameworks/tailwind.svg',
       },
       {
         id: 4,
@@ -365,7 +365,7 @@ export const myProjects = [
       {
         id: 6,
         name: 'Faker',
-        path: '/frameworks/faker.jpg',
+        path: '/frameworks/faker.svg',
       },
     ],
   },
@@ -443,13 +443,13 @@ export const items = [
     id: 3,
     color: "#9911ff",
     label: "Redux Toolkit",
-    image: "/frameworks/redux.png",
+    image: "/frameworks/redux.svg",
   },
   {
     id: 4,
     color: "#1d4ed8",
     label: "TailwindCSS",
-    image: "/frameworks/tailwind.png",
+    image: "/frameworks/tailwind.svg",
   },
   {
     id: 16,
@@ -470,7 +470,7 @@ export const items = [
     label: "PostgreSQL",
     image: "/frameworks/postgres.png",
   },
-  { id: 8, color: "#0cdcf7", label: "Faker", image: "/frameworks/faker.jpg" },
+  { id: 8, color: "#a1a1aa", label: "Faker", image: "/frameworks/faker.svg" },
   {
     id: 9,
     color: "#16a34a",
@@ -488,9 +488,15 @@ export const items = [
   },
   {
     id: 14,
-    color: "#fbbf24",
+    color: "#fcd34d",
     label: "Motion",
     image: "/frameworks/motion.png",
+  },
+  {
+    id: 17,
+    color: "#f97316",
+    label: "D3",
+    image: "/frameworks/d3.svg",
   },
   { id: 15, color: "#52525b", label: "Ollama", image: "/frameworks/llama.jpg" },
 ];
