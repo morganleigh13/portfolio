@@ -1,6 +1,12 @@
 import { motion } from "motion/react";
+import { setSearch } from "../redux/animationSlice"
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = ({ hidden }) => {
+
+  const dispatch = useDispatch()
+
+  const {search} = useSelector(state => state.animations)
   return (
     <>
       {!hidden && (
@@ -127,6 +133,8 @@ const Navbar = ({ hidden }) => {
               </div>
               <div className="navbar-end">
                 <input
+                value={search}
+                onChange={(e) => dispatch(setSearch(e.target.value))}
                   type="text"
                   placeholder="Search"
                   className="input input-bordered w-64 lg:w-auto"

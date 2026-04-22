@@ -20,7 +20,7 @@ export default function Frameworks() {
       </section>
 
       <div ref={containerRef} className="relative h-[180vh]">
-        <div className="sticky top-0 h-screen w-120 mx-aut0 flex items-center justify-start overflow-visible">
+        <div className="sticky top-0 h-screen w-120 mx-auto flex items-center justify-start overflow-visible">
           <motion.div
             className="flex gap-15 will-change-transform"
             style={{ x }}
