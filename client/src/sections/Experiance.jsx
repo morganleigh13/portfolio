@@ -15,18 +15,17 @@ const ExperienceCard = ({ experience }) => {
     <VerticalTimelineElement
       contentStyle={{
         background: "var(--color-neutral)",
-        color: "var(--color-neutral-content)",
-        
+        color: "var(--color-neutral-content)",       
       }}
       contentArrowStyle={{ borderRight: "2px solid var(--color-primary)"}}
       date={experience.duration}
       iconStyle={{ background: "var(--color-base-100)"}}
       icon={
-        <div className='flex justify-center items-center w-full h-full p-2'>
+        <div className='flex justify-center items-center w-full h-full p-2 '>
           <img
             src={experience.icon}
             alt={experience.name}
-            className='w-[100%] h-[100%] object-contain'
+            className='w-full h-full object-contain'
           />
         </div>
       }
@@ -73,7 +72,8 @@ const Experience = () => {
       </motion.div>
 
       <div className='flex flex-col'>
-        <VerticalTimeline>
+        <VerticalTimeline 
+        lineColor="oklch(54.2% 0.034 322.5)">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
