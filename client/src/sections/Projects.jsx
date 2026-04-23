@@ -7,6 +7,7 @@ import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/canvas/DemoComputer";
 import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
+import { div } from "three/src/nodes/math/OperatorNode.js";
 
 const projectCount = myProjects.length;
 
@@ -14,10 +15,11 @@ const Projects = () => {
   const [projectIndex, setProjectIndex] = useState(0);
   const { search } = useSelector((state) => state.animations);
 
-const fileredProjects = myProjects.filter(project =>  project.title.toLowerCase().includes(search.toLowerCase()) ||  project.desc.toLowerCase().includes(search.toLowerCase()) ||  project.subdesc.toLowerCase().includes(search.toLowerCase()) || project.tags.some(tag => tag.name.toLowerCase() === search.toLowerCase()))
-  const currentProject = fileredProjects[projectIndex];
-  const IconComponent = fileredProjects[projectIndex].logo;
- 
+const filteredProjects = myProjects.filter(project =>  project.title.toLowerCase().includes(search.toLowerCase()) ||  project.desc.toLowerCase().includes(search.toLowerCase()) ||  project.subdesc.toLowerCase().includes(search.toLowerCase()) || project.tags.some(tag => tag.name.toLowerCase() === search.toLowerCase()))
+
+  const currentProject = filteredProjects[projectIndex];
+  const IconComponent = filteredProjects[projectIndex]?.logo;
+
 
   const handleNavigation = (direction) => {
     setProjectIndex((prevIndex) => {
@@ -40,6 +42,9 @@ const fileredProjects = myProjects.filter(project =>  project.title.toLowerCase(
 
 
   return (
+    <>
+    {currentProject ? (
+
     <section
       id="projects"
       className="sm:px-10 p-5 bg-base-300 vintage pt-3 projects-background"
@@ -140,6 +145,10 @@ shadow-black"
         </div>
       </div>
     </section>
+    ): (
+    <div className="text-5xl flex justify-center vintage py-10 animate-pulse text-warning "><p>There are no current projects that meet that search criteria.</p></div>
+    )}
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import { experiences } from "../data";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
@@ -11,7 +12,9 @@ import { styles } from "../styles";
 import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceCard = ({ experience }) => {
+
   return (
+ 
     <VerticalTimelineElement
       contentStyle={{
         background: "var(--color-neutral)",
@@ -56,11 +59,19 @@ const ExperienceCard = ({ experience }) => {
         ))}
       </ul> */}
     </VerticalTimelineElement>
+
+   
+   
   );
 };
 
 const Experience = () => {
+  const { search } = useSelector((state) => state.animations);
+
+  const filteredExperience = experiences.filter(exp =>  exp.name.toLowerCase().includes(search.toLowerCase()) ||  exp.pos.toLowerCase().includes(search.toLowerCase()) ||  exp.duration.toLowerCase().includes(search.toLowerCase()) || exp.title.toLowerCase().includes(search.toLowerCase()))
+
   return (
+ 
     <div id="experiance" className="bg-base-300 experiance-background rounded-xl">
       <motion.div variants={textVariant()}>
         {/* <p className={`${styles.sectionSubText} text-center`}>
@@ -72,17 +83,23 @@ const Experience = () => {
       </motion.div>
 
       <div className='flex flex-col'>
+        {filteredExperience.length > 0 ? (
+
         <VerticalTimeline 
         lineColor="oklch(54.2% 0.034 322.5)">
-          {experiences.map((experience, index) => (
+          {filteredExperience.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
               experience={experience}
             />
           ))}
-        </VerticalTimeline>
+        </VerticalTimeline> ):  (
+      <div className="text-4xl flex justify-center vintage py-5 text-warning animate-pulse"><p>There is no work experiance that meets that search criteria.</p></div>
+      )}
       </div>
     </div>
+   
+        
   );
 };
 
