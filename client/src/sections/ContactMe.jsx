@@ -18,8 +18,8 @@ const ContactMe = () => {
     message: "",
   });
   useEffect(() => {
-    toast.success(`Thank you ${form.fullName}.  I will contact you soon.`)
     if(success === "message created"){
+      toast.success(`Thank you ${form.fullName}.  I will contact you soon.`)
       setForm({ fullName: '', phone: '', email: '', message: ''})
       dispatch(successState())
     }
@@ -140,7 +140,7 @@ const ContactMe = () => {
              
               <div className="justify-end flex w-full my-7">
                 <button
-                  className="bg-base-100 w-1/3 px-5 py-2 min-h-10 rounded-lg shadow-slate-600 shadow-lg flex justify-center items-center text-md text-seconary-content gap-3"
+                  className="bg-base-100 w-1/3 px-5 py-4 min-h-10 rounded-lg shadow-slate-600 shadow-lg flex justify-center items-center text-md text-seconary-content gap-3"
                   type="submit"
                   disabled={loading}
                 >
@@ -148,7 +148,7 @@ const ContactMe = () => {
                   <img
                     src="/mobile.svg"
                     alt="arrow-up"
-                    className={`bg-secondary px-2 py-2 min-h-12 rounded-lg shadow-slate-600 shadow-xl flex justify-center items-center text-lg text-primary gap-3_arrow ${loading ? "animate-bounce h-fit" : ""}`}
+                    className={`bg-secondary px-2 py-2 min-h-12 rounded-lg shadow-slate-600 shadow-xl flex justify-center items-center text-lg text-primary gap-3_arrow ${!loading ? "animate-bounce " : ""}`}
                   />
                 </button>
               </div>
