@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PixelCard from "../components/react-bits/PixelCard";
-import { createMessage } from "../redux/messageSlice";
+import { createMessage, successState } from "../redux/messageSlice";
 import ProfileCard from "../components/react-bits/ProfileCard";
 import toast from "react-hot-toast"
 
@@ -9,7 +9,7 @@ import toast from "react-hot-toast"
 const ContactMe = () => {
   const dispatch = useDispatch();
 
-  const { loading } = useSelector((state) => state.messages);
+  const { loading, success } = useSelector((state) => state.messages);
 
   const [form, setForm] = useState({
     fullName: "",
@@ -18,8 +18,13 @@ const ContactMe = () => {
     message: "",
   });
   useEffect(() => {
-    // console.log(form)
-  }, [form]);
+    toast.success(`Thank you ${form.fullName}.  I will contact you soon.`)
+    if(success === "message created"){
+      setForm({ fullName: '', phone: '', email: '', message: ''})
+      dispatch(successState())
+    }
+  
+  }, [success]);
 
   const handleFormat = (val) => {
     if (val.length === 3 || val.length % 5 === 0) {
@@ -91,7 +96,6 @@ const ContactMe = () => {
                   type="phone"
                   id="phone"
                   name="phone"
-                  pattern={`[0-9]*`}
                   className="w-full bg-slate-300 px-5 py-2 rounded-lg placeholder:text-zinc-500 text-lg text-zinc-800 shadow-slate-600 shadow-xl focus:outline-none mt-1"
                   placeholder="480-456-7890"
                   value={form.phone}             
@@ -144,7 +148,7 @@ const ContactMe = () => {
                   <img
                     src="/mobile.svg"
                     alt="arrow-up"
-                    className="bg-secondary px-2 py-2 min-h-12 rounded-lg shadow-slate-600 shadow-xl flex justify-center items-center text-lg text-primary gap-3_arrow"
+                    className={`bg-secondary px-2 py-2 min-h-12 rounded-lg shadow-slate-600 shadow-xl flex justify-center items-center text-lg text-primary gap-3_arrow ${loading ? "animate-bounce h-fit" : ""}`}
                   />
                 </button>
               </div>
