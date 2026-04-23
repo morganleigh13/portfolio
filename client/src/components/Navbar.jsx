@@ -1,12 +1,11 @@
 import { motion } from "motion/react";
-import { setSearch } from "../redux/animationSlice"
+import { setSearch } from "../redux/animationSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = ({ hidden }) => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  const {search} = useSelector(state => state.animations)
+  const { search } = useSelector((state) => state.animations);
   return (
     <>
       {!hidden && (
@@ -79,53 +78,51 @@ const Navbar = ({ hidden }) => {
                       <a href="#contact">Contact Me</a>
                     </button>
                   </li>
-                
+
                   <li>
                     <button className="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
-                    <a href="./src/assets/online-resume.pdf" target="_blank">
-            
-
-                      <div className="relative bg-transparent flex justify-center items-center">
-                        <p className="bg-sky-200 opacity-75 transition-all duration-500 ease-in rounded-lg z-1 text-black text-lg tracking-wider px-.5">
-                        View Resume
-                        </p>
-                        <div className="flower flower1">
-                          <div className="petal one"></div>
-                          <div className="petal two"></div>
-                          <div className="petal three"></div>
-                          <div className="petal four"></div>
+                      <a href="./src/assets/online-resume.pdf" target="_blank">
+                        <div className="relative bg-transparent flex justify-center items-center">
+                          <p className="bg-sky-200 opacity-75 transition-all duration-500 ease-in rounded-lg z-1 text-black text-lg tracking-wider px-.5">
+                            View Resume
+                          </p>
+                          <div className="flower flower1">
+                            <div className="petal one"></div>
+                            <div className="petal two"></div>
+                            <div className="petal three"></div>
+                            <div className="petal four"></div>
+                          </div>
+                          <div className="flower flower2">
+                            <div className="petal one"></div>
+                            <div className="petal two"></div>
+                            <div className="petal three"></div>
+                            <div className="petal four"></div>
+                          </div>
+                          <div className="flower flower3">
+                            <div className="petal one"></div>
+                            <div className="petal two"></div>
+                            <div className="petal three"></div>
+                            <div className="petal four"></div>
+                          </div>
+                          <div className="flower flower4">
+                            <div className="petal one"></div>
+                            <div className="petal two"></div>
+                            <div className="petal three"></div>
+                            <div className="petal four"></div>
+                          </div>
+                          <div className="flower flower5">
+                            <div className="petal one"></div>
+                            <div className="petal two"></div>
+                            <div className="petal three"></div>
+                            <div className="petal four"></div>
+                          </div>
+                          <div className="flower flower6">
+                            <div className="petal one"></div>
+                            <div className="petal two"></div>
+                            <div className="petal three"></div>
+                            <div className="petal four"></div>
+                          </div>
                         </div>
-                        <div className="flower flower2">
-                          <div className="petal one"></div>
-                          <div className="petal two"></div>
-                          <div className="petal three"></div>
-                          <div className="petal four"></div>
-                        </div>
-                        <div className="flower flower3">
-                          <div className="petal one"></div>
-                          <div className="petal two"></div>
-                          <div className="petal three"></div>
-                          <div className="petal four"></div>
-                        </div>
-                        <div className="flower flower4">
-                          <div className="petal one"></div>
-                          <div className="petal two"></div>
-                          <div className="petal three"></div>
-                          <div className="petal four"></div>
-                        </div>
-                        <div className="flower flower5">
-                          <div className="petal one"></div>
-                          <div className="petal two"></div>
-                          <div className="petal three"></div>
-                          <div className="petal four"></div>
-                        </div>
-                        <div className="flower flower6">
-                          <div className="petal one"></div>
-                          <div className="petal two"></div>
-                          <div className="petal three"></div>
-                          <div className="petal four"></div>
-                        </div>
-                      </div>
                       </a>
                     </button>
                   </li>
@@ -133,8 +130,8 @@ const Navbar = ({ hidden }) => {
               </div>
               <div className="navbar-end">
                 <input
-                value={search}
-                onChange={(e) => dispatch(setSearch(e.target.value))}
+                  value={search}
+                  onChange={(e) => dispatch(setSearch(e.target.value))}
                   type="text"
                   placeholder="Search"
                   className="input input-bordered w-64 lg:w-auto"
@@ -142,41 +139,41 @@ const Navbar = ({ hidden }) => {
               </div>
             </div>
             <div className="collapse-content lg:hidden absolute top-20 left-0 bg-base-100 rounded-xl overflow-visible z-100">
-            <ul className="menu px-1 text-xl gap-5">
-                  <li>
-                    <button className="hover:text-secondary">
-                      <a href="#morgan">Morgan</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="hover:text-secondary">
-                      <a href="#frameworks">Frameworks</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="hover:text-secondary">
-                      <a href="#projects">Projects</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="hover:text-secondary">
-                      <a href="#experiance">Experiance</a>
-                    </button>
-                  </li>
+              <ul className="menu px-1 text-xl gap-5">
+                <li>
+                  <button className="hover:text-secondary">
+                    <a href="#morgan">Morgan</a>
+                  </button>
+                </li>
+                <li>
+                  <button className="hover:text-secondary">
+                    <a href="#frameworks">Frameworks</a>
+                  </button>
+                </li>
+                <li>
+                  <button className="hover:text-secondary">
+                    <a href="#projects">Projects</a>
+                  </button>
+                </li>
+                <li>
+                  <button className="hover:text-secondary">
+                    <a href="#experiance">Experiance</a>
+                  </button>
+                </li>
 
-                  <li>
-                    <button className="hover:text-secondary">
-                      <a href="#contact">Contact Me</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
+                <li>
+                  <button className="hover:text-secondary">
+                    <a href="#contact">Contact Me</a>
+                  </button>
+                </li>
+                <li>
+                  <button className="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
                     <a href="./src/assets/Resume.docx" download="Resume">
-            Download Resume
-                      </a>
-                    </button>
-                  </li>
-                </ul>
+                      Download Resume
+                    </a>
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
         </motion.header>

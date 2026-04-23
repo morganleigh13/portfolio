@@ -5,14 +5,19 @@ import { Center, OrbitControls } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/canvas/DemoComputer";
+import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
 
 const projectCount = myProjects.length;
 
 const Projects = () => {
   const [projectIndex, setProjectIndex] = useState(0);
-  const currentProject = myProjects[projectIndex];
-  const IconComponent = myProjects[projectIndex].logo;
+  const { search } = useSelector((state) => state.animations);
+
+const fileredProjects = myProjects.filter(project =>  project.title.toLowerCase().includes(search.toLowerCase()) ||  project.desc.toLowerCase().includes(search.toLowerCase()) ||  project.subdesc.toLowerCase().includes(search.toLowerCase()) || project.tags.some(tag => tag.name.toLowerCase() === search.toLowerCase()))
+  const currentProject = fileredProjects[projectIndex];
+  const IconComponent = fileredProjects[projectIndex].logo;
+ 
 
   const handleNavigation = (direction) => {
     setProjectIndex((prevIndex) => {
@@ -31,6 +36,8 @@ const Projects = () => {
       { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
     );
   }, [projectIndex]);
+
+
 
   return (
     <section

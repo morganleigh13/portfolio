@@ -306,6 +306,11 @@ export const myProjects = [
         path: '/frameworks/tailwind.svg',
       },
       {
+        id: 7,
+        name: 'Daisy',
+        path: '/frameworks/daisy.jpg',
+      },
+      {
         id: 4,
         name: 'Postgres',
         path: '/frameworks/postgres.png',
