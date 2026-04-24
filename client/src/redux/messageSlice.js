@@ -48,6 +48,7 @@ const messageSlice = createSlice({
       .addCase(createMessage.rejected, (state, action) => {
         console.log("createMessage.rejected", action.payload, action.error);
         state.loading = false;
+        state.success = "negative"
       });
   },
 });
