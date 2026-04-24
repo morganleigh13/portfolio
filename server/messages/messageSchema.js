@@ -4,7 +4,7 @@ const messageSchema = new Schema({
     fullName: String,
     email: String,
     phone: String,
-    message: String
+    message: { type: String, unique: true }
 })
 
 export default messageSchema
