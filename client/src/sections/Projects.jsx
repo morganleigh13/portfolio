@@ -7,7 +7,7 @@ import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/canvas/DemoComputer";
 import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
-import { div } from "three/src/nodes/math/OperatorNode.js";
+
 
 const projectCount = myProjects.length;
 
