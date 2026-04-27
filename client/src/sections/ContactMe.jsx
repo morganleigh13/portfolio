@@ -67,7 +67,7 @@ const ContactMe = () => {
             </h3>
             <p className="text-lg text-sky-200 mt-5 bg-base-300 w-fit rounded-4xl px-2 py-1">
               From launching a new website to finding the right talent for your
-              company, I’m ready to help you succeed.
+              company, I’m available.
             </p>
 
             <form
