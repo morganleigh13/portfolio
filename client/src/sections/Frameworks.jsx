@@ -22,13 +22,13 @@ export default function Frameworks() {
       <div ref={containerRef} className="relative h-[180vh]">
         <div className="sticky top-0 h-screen w-120 mx-auto flex items-center justify-start overflow-visible">
           <motion.div
-            className="flex gap-15 will-change-transform"
+            className="flex gap-25 will-change-transform"
             style={{ x }}
           >
             {items.map((item) => (
               <div
                 key={item.id}
-                className="gallery-item shrink-0 w-55 h-55 rounded-tl-4xl rounded-br-4xl relative overflow-hidden"
+                className="gallery-item shrink-0 w-75 h-75 rounded-tl-4xl rounded-br-4xl relative overflow-hidden"
                 style={{
                   "--item-color": item.color,
                   "--item-image": `url(${item.image})`,
