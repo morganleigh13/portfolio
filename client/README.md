@@ -1,31 +1,12 @@
-## 🎨 Personal Portfolio
+# React + Vite
 
-![My Website Preview](./portfolio-2026.png "portfolio")
-![My Website Preview](./portfolio-2026-1.png "portfolio-preview")
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A fully‑featured, responsive personal portfolio built with React, Three.js, Redux, Tailwind CSS, DaisyUI, Framer Motion, and React Hot Toast.
-The site showcases my certifications, work experience, and provides a downloadable & printable resume.
+Currently, two official plugins are available:
 
-Visit the live demo: https://your-portfolio-demo.com
-Source code: https://github.com/your-username/portfolio
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Overview
-Dynamic 3D visualisation – Interactive 3D scene powered by Three.js
-State management – Redux for global data flow
-Utility‑first styling – Tailwind + DaisyUI components
-Animations – Framer Motion for smooth UI transitions
-User feedback – Toast notifications via React Hot Toast
-Resume – PDF download + print button
-The project is a showcase of modern web‑development techniques and my professional background.
+## Expanding the ESLint configuration
 
-## 🛠️ Tech Stack
-Layer	Tool	Purpose
-Framework	React (v18)	Component‑based UI
-3D	Three.js	Render 3D graphics
-State	Redux Toolkit	Global state for certificates & experience
-Styling	Tailwind CSS + DaisyUI	Responsive, utility‑first design
-Animations	Framer Motion	Entrance, hover, and interactive animations
-Notifications	React Hot Toast	Non‑intrusive toast messages
-Build	Vite	Fast dev server & build
-Linting	ESLint + Prettier	Code quality
-Testing	(Optional)	Jest + React Testing Library (add if needed)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
