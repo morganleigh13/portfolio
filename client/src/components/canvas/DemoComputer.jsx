@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
+import { MeshBasicMaterial } from "three";
 import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -12,13 +13,21 @@ const DemoComputer = (props) => {
   console.log(nodes, materials)
 const videoTex = useVideoTexture(
   props.texture ? props.texture : '/textures/project/project1.mp4',
-  {
-    onloadedmetadata: () => {
-    
-     
-    },
-  }
+
 );
+
+ const screenMat = useMemo(() => {
+    // The material we actually want on the screen only
+    const mat = new MeshBasicMaterial({
+      map: videoTex,           
+      toneMapped: false,      
+      side: THREE.FrontSide,  
+    });
+    console.log(mat)
+    return mat;
+  }, [videoTex]);
+
+  
   useGSAP(() => {
     console.log(group)
     gsap.from(group.current.rotation, {
@@ -26,9 +35,8 @@ const videoTex = useVideoTexture(
       duration: 1,
       ease: 'power3.out',
     });
-    console.log(videoTex)
+ 
    
-
   }, [videoTex]);
 
   return (
@@ -50,17 +58,13 @@ const videoTex = useVideoTexture(
           name="Screen_ComputerScreen_0"
           // castShadow
           // receiveShadow
-          geometry={nodes['Screen_ComputerScreen_0'].geometry}
-          material={nodes['Screen_ComputerScreen_0'].material}
+          geometry={nodes["Screen_ComputerScreen_0"].geometry}
+          material={screenMat}   
           position={[0.00, 0.03, -0.1]}
           rotation={[3.24, -0.00, -3.14]}
           scale={[ 1,1, 1]}
           >
-          <meshBasicMaterial
-        map={videoTex}
-        toneMapped={false}
-    
-      />
+     
         </mesh>
         <group name="RootNode" position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, -0.033]} scale={0.045}>
           <group
@@ -74,6 +78,12 @@ const videoTex = useVideoTexture(
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
             scale={[0.00, 0.00, 0.00]}
+          />
+          <group
+            name="Screen"
+            position={[2.4, 0.065, -10]}
+            rotation={[3.14, 3.89, -3.14]}
+            scale={[-100, -100, -88]}
           />
         </group>
       </group>

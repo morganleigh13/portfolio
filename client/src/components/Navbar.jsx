@@ -169,7 +169,7 @@ const Navbar = ({ hidden }) => {
                 <li>
                   <button className="flower-button flex items-center justify-center bg-transparent border-0 border-base-200 cursor-pointer">
                     <a href="./src/assets/Resume.docx" download="Resume">
-                      Download Resume
+                      View Resume
                     </a>
                   </button>
                 </li>

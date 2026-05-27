@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import CanvasLoader from "../components/CanvasLoader";
-import DemoComputer from "../components/canvas/DemoComputer";
+import DemoComputer from "../components/canvas/DemoComputerOld";
 import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
 
