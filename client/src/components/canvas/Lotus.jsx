@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import React, { Suspense, useRef, useMemo, forwardRef, useEffect } from "react";
+import React, { Suspense, useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
@@ -9,6 +9,12 @@ import LightRays from "../react-bits/LightRays";
 import { useDispatch, useSelector } from "react-redux";
 import { setInteraction } from "../../redux/animationSlice";
 import CanvasLoader from "../CanvasLoader";
+import { useMediaQuery } from "react-responsive";
+import { calculateSizes } from "../../data";
+
+
+
+
 
 function Lotus() {
   const gltf = useGLTF("/models/a_pink_lotus_flower.glb");
@@ -64,6 +70,12 @@ function HiddenText(){
 } 
 
 function LotusText() {
+  const isSmall = useMediaQuery({ maxWidth: 600 });
+  const isMobile = useMediaQuery({ minWidth: 600, maxWidth: 900 });
+  const isTablet = useMediaQuery({ minWidth: 900, maxWidth: 1024});
+
+const sizes = calculateSizes(isSmall, isMobile, isTablet)
+
   let font = useLoader(
     FontLoader,
     "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
@@ -72,7 +84,7 @@ function LotusText() {
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Morgan  Adams", {
       font,
-      size: 2.2,
+      size: sizes.textScale,
       depth: 3,
       curveSegments: 12,
       bevelEnabled: true,
@@ -83,7 +95,7 @@ function LotusText() {
     });
     g.center();
     return g;
-  }, [font]);
+  }, [font, sizes]);
 
   const textMat = useMemo(
     () => new THREE.MeshStandardMaterial({ color: "#ffd5a3" }),
@@ -110,6 +122,11 @@ function LotusText() {
 }
 
 function TitleText() {
+  const isSmall = useMediaQuery({ maxWidth: 600 });
+  const isMobile = useMediaQuery({ minWidth: 600, maxWidth: 900 });
+  const isTablet = useMediaQuery({ minWidth: 900, maxWidth: 1024});
+  let sizes = calculateSizes(isSmall, isMobile, isTablet)
+
  let font = useLoader(
     FontLoader,
     "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/fonts/gentilis_bold.typeface.json"
@@ -117,7 +134,7 @@ function TitleText() {
   const textGeom = useMemo(() => {
     const g = new TextGeometry("Software Developer", {
       font,
-      size: 2.3,
+      size: sizes.textScale,
       depth: 1.5,
       curveSegments: 12,
       bevelEnabled: true,
@@ -128,7 +145,7 @@ function TitleText() {
     });
     g.center();
     return g;
-  }, [font]);
+  }, [font, sizes]);
 
   const mat = useMemo(
     () => new THREE.MeshStandardMaterial({ color: "#a29dff" }),
@@ -168,6 +185,7 @@ export function MovingLotus() {
   const { camera } = useThree();
 
   useFrame(() => {
+ 
     if (flowerRef.current) {
       flowerRef.current.rotation.y += 0.003; // slow spin
       flowerRef.current.rotation.x = 0.5; // slight tilt toward camera
@@ -177,7 +195,7 @@ export function MovingLotus() {
       const flowerWorldPos = new THREE.Vector3();
       flowerRef.current.getWorldPosition(flowerWorldPos);
       const dist = camera.position.distanceTo(flowerWorldPos);
-      hiddenRef.current.scale.setScalar(dist < 3 ? 1 : 0);
+      hiddenRef.current.scale.setScalar(dist < 2.5 ? 1 : 0);
       const tilt = dist < 12.5 ? -Math.PI / 5.5 : 0;
       hiddenRef.current.rotation.x = tilt;
     }
@@ -194,9 +212,11 @@ export function MovingLotus() {
       <group ref={flowerRef}>
         <Lotus />
       </group>
+     
       <group ref={textRef}>
         <LotusText />      
       </group>
+      
       <group ref={titleRef}>
         <TitleText />      
       </group>

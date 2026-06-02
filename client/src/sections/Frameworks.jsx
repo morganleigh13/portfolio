@@ -7,6 +7,7 @@ export default function Frameworks() {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
+    sensitivity: 0.01
   });
 
   // Move from first item centered to last item centered
@@ -15,7 +16,7 @@ export default function Frameworks() {
 
   return (
     <div id="frameworks" className="h-auto overflow-visable technical-background">
-      <section className="text-8xl vintage flex flex-col justify-center pt-40 h-[30vh] ps-30">
+      <section className="md:text-8xl text-4xl vintage flex flex-col justify-center pt-40 h-[30vh] ps-30">
         <h1 className="uppercase text-primary text-shadow-[3px_4px_6px_var(--color-primary)]">Technical Skills</h1>
       </section>
 
@@ -45,7 +46,7 @@ export default function Frameworks() {
         </div>
       </div>
       <section className="text-7xl tracking-wider vintage flex flex-col justify-center h-[10vh]">
-        <h1 className="text-secondary text-shadow-[3px_4px_6px_var(--color-slate-800)] pb-7 ps-10">Personal Projects</h1>
+        <h1 className="text-secondary text-shadow-[3px_4px_6px_var(--color-slate-800)] lg:pb-7 pb-30 lg:ps-10 ps-30">Personal Projects</h1>
       </section>
     </div>
   );

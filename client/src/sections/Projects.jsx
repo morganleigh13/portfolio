@@ -51,7 +51,7 @@ const Projects = () => {
       {currentProject ? (
         <section
           id="projects"
-          className="sm:px-10 p-5 bg-base-300 vintage pt-3 projects-background"
+          className="sm:px-10 p-5 bg-base-300 vintage pt-3 projects-background "
         >
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 w-full ">
             <div
@@ -76,7 +76,7 @@ shadow-black"
                 />
               </div>
 
-              <div className="flex flex-col gap-5 tracking-wider my-5">
+              <div className="flex flex-col gap-5 tracking-wider my-5 ">
                 <p className="text-3xl text-info font-semibold animatedText p-1 ">
                   {currentProject.title}
                 </p>
@@ -110,25 +110,25 @@ shadow-black"
                   <img src="/assets/arrow-up.png" alt="arrow" />
                 </a>
               </div>
-              <div className="flex justify-between items-center mt-7">
+              <div className="flex justify-between items-center mt-7 tracking-wider">
                 <button
-                  className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient"
+                  className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient animate-pulse ease-in-out"
                   onClick={() => handleNavigation("previous")}
-                >
+                > previous
                   <img
                     src="/assets/left-arrow.png"
                     alt="left-arrow"
-                    className="size-4"
+                    className="size-6 pt-2"
                   />
                 </button>
                 <button
-                  className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient"
+                  className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient animate-pulse ease-in-out"
                   onClick={() => handleNavigation("next")}
-                >
+                > next
                   <img
                     src="/assets/right-arrow.png"
                     alt="right-arrow"
-                    className="size-4"
+                    className="size-6 pt-2"
                   />
                 </button>
               </div>

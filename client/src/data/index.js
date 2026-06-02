@@ -3,6 +3,7 @@ import { GiBubbles, GiJewelCrown, GiSpaceSuit } from "react-icons/gi";
 import { ImBlogger2 } from "react-icons/im";
 import { LuHandHeart } from "react-icons/lu";
 import { SiFoodpanda } from "react-icons/si";
+import { SiOllama } from "react-icons/si";
 
 
 export const reviews = [
@@ -327,11 +328,12 @@ export const myProjects = [
       },
     ],
   },
+
   {
     title: 'Frosting - E-Commerce',
     desc: 'Frosting is an e-commerce site that sells jewelry and purses. The platform allows customers to browse products by category, sort the page by various options, add items to their cart, and remove them from the cart. The platform also features validation for legitimate credit cards, enhancing overall security and trustworthiness.',
     subdesc:
-      'It uses RTK tailwind DaisyUI, MongoDB as the database, and Faker to generate fake data. Additionally, there is two-factor authentication for credit card transactions, ensuring a secure payment process.',
+      'It uses RTK, Tailwind, DaisyUI, MongoDB as the database, and Faker to generate fake data. Additionally, there is two-factor authentication for credit card transactions, ensuring a secure payment process.',
     href: "http://192.168.1.27/madams/frosting",
     texture: '/websites/recordings/frosting.mp4',
     logo: GiJewelCrown,
@@ -374,11 +376,58 @@ export const myProjects = [
       },
     ],
   },
+  {
+    title: 'Morgan - AI',
+    desc: 'Morgan is a  web‑app that lets you talk to the latest GPT‑based models from a single, modern UI – no signup required, but sign‑up gives you history, favorites, and multiple tabs.',
+    subdesc:
+      'It uses RTK, Tailwind, DaisyUI, MongoDB as the database and Ollama to connect to the latest models. If you are logged in you can create multiple conversations and sort by conversations or single responses that you have added a favorite tag to.',
+    href: "http://192.168.1.27/madams/morgan",
+    texture: '/websites/recordings/morgan.mp4',
+    logo: SiOllama,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #be185d',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/frameworks/reactjs.png',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: '/frameworks/redux.svg',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/frameworks/tailwind.svg',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: '/frameworks/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: '/frameworks/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Ollama',
+        path: '/frameworks/llama.jpg',
+      },
+    ],
+  },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
-    deskScale : isSmall ? 0.05 : isMobile ? 1 : 0.1,
+    textScale: isSmall ? 1 : isMobile ? 1.5 : isTablet ? 1.9 : 2.2,
     deskPosition : isSmall ? [-4,2,0] : isMobile ? [0, 0, 0] : isTablet ? [0,0,0] : [1,-1, 5],
     deskRotation: isMobile ? [0.2,110,0.0] : isTablet ? [0.2,110,0] : [0.2,110,0],
     cubePosition : isSmall ? [4, -5, 0] : isMobile ? [8,-4,0] : isTablet ? [10, -5, 0] : [14, -4.2, 0],
@@ -410,7 +459,7 @@ export const experiences = [
     id: 2,
     name: 'Live Streaming Hack-a-thon',
     pos: 'Team Lead',
-    duration: '2025',
+    duration: 'April 2025',
     title: " Designed a full‑stack Daily‑Check‑In app that earned the “Best Innovation” award during our first ever Hack-a-thon.",
     icon: '/assets/chat.svg',
     animation: 'victory',

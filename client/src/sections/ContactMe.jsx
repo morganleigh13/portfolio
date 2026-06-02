@@ -47,7 +47,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="sm:px-10 p-5 w-screen bg-base-300 flex items-start justify-around vintage tracking-wider contact-background"
+      className="sm:px-10 p-5 w-screen bg-base-300 flex lg:items-start items-center justify-around vintage tracking-wider contact-background lg:flex-row flex-col "
     >
       <ProfileCard
         className="pt-20"
@@ -59,7 +59,7 @@ const ContactMe = () => {
         innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
       />
 
-      <div className="relative text-center justify-center flex w-1/3 max-w-4xl">
+      <div className="relative text-center justify-center flex lg:w-1/3 max-w-4xl lg:mt-0 mt-10">
         <PixelCard>
           <div className="max-w-xl relative z-10 sm:px-10 px-5 pt-3 lg:pt-10 ">
             <h3 className="sm:text-4xl text-3xl font-semibold text-neutral-content bg-base-300 w-fit rounded-4xl px-1 py-1">

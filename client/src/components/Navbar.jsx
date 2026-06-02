@@ -17,7 +17,7 @@ const Navbar = ({ hidden }) => {
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="vintage flex items-center justify-between bg-base-200 w-full rounded-md h-24 max-lg:collapse lg:mb-48">
+          <div className="vintage flex items-center justify-between bg-base-200 w-full rounded-md h-24 max-lg:collapse lg:mb-48 z-100">
             <input
               id="navbar-1-toggle"
               className="peer hidden"
