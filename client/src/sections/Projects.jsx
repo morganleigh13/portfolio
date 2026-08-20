@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import CanvasLoader from "../components/CanvasLoader";
-import DemoComputer from "../components/canvas/DemoComputerOld";
+import DemoComputer from "../components/canvas/DemoComputer";
 import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
 
@@ -142,7 +142,7 @@ shadow-black"
                     {/* Position is zooming laptop in and out */}
                     <group
                       scale={.2}
-                      position={[0, 0.7, 0.3]}
+                      position={[0, 0, 0]}
                       rotation={[-1.5, -.09, 0]}
                     >
                       <DemoComputer texture={currentProject.texture} />
@@ -159,8 +159,8 @@ shadow-black"
                   enableZoom={true}
                   enablePan={false}
                   enableRotate={false}
-                  minDistance={2.1}
-                  maxDistance={3}
+                  minDistance={2.35}
+                  maxDistance={2.7}
                   target={[-0.003, -1, -0.07]}
                   
                 />
