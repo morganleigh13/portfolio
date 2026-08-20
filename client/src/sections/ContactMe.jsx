@@ -52,7 +52,7 @@ const ContactMe = () => {
       <ProfileCard
         className="pt-20"
         contactText="Contact Me"
-        avatarUrl="/pictures/girlProfile.jpg"
+        avatarUrl="/pictures/morgan.jpeg"
         onContactClick={() => console.log("Contact clicked")}
         behindGlowColor="rgba(125, 190, 255, 0.2)"
         iconUrl="/frameworks/redux.svg"
