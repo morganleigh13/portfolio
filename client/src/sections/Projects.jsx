@@ -141,9 +141,9 @@ shadow-black"
                   <Suspense fallback={<CanvasLoader />}>
                     {/* Position is zooming laptop in and out */}
                     <group
-                      scale={1}
-                      position={[0.003, 1, 0.07]}
-                      rotation={[-1.5, 0.3, 0]}
+                      scale={.2}
+                      position={[0, 0.7, 0.3]}
+                      rotation={[-1.5, -.09, 0]}
                     >
                       <DemoComputer texture={currentProject.texture} />
                     </group>
