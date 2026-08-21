@@ -105,7 +105,7 @@ shadow-black"
                   className="flex gap-3 items-baseline"
                 >
                   <p className="text-info contrast-200 text-xl">
-                    Go To gitLab Repo
+                    Go To gitHub Repo
                   </p>
                   <img src="/assets/arrow-up.png" alt="arrow" />
                 </a>
