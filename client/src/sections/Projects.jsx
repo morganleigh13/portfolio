@@ -106,12 +106,12 @@ shadow-black"
                   href={currentProject.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex gap-3 items-baseline"
+                  className="flex gap-3 items-baseline justify-end"
                 >
                   <p className="text-info contrast-200 text-xl">
                   gitHub Repo
                   </p>
-                  <img src="/assets/arrow-up.png" alt="arrow" />
+                  <img className="w-1/10" src="/assets/share-solid-full.svg" alt="arrow" />
                 </a>
               </div>
               <div className="flex justify-between items-center mt-auto pt-7 tracking-wider">
