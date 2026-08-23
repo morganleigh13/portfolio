@@ -1,23 +1,61 @@
 import * as THREE from "three";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BoxGeometry, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry } from "three";
-import { RoundedBox, useVideoTexture } from "@react-three/drei";
+import { RoundedBox } from "@react-three/drei";
+
+const useProjectVideoTexture = (source) => {
+  const [texture, setTexture] = useState(null);
+
+  useEffect(() => {
+    let disposed = false;
+    setTexture(null);
+    if (!source) return undefined;
+
+    const video = document.createElement("video");
+    const nextTexture = new THREE.VideoTexture(video);
+
+    video.src = source;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+
+    nextTexture.colorSpace = THREE.SRGBColorSpace;
+    nextTexture.flipY = true;
+    nextTexture.wrapS = THREE.ClampToEdgeWrapping;
+    nextTexture.wrapT = THREE.ClampToEdgeWrapping;
+
+    const handleCanPlay = () => {
+      if (disposed) return;
+      setTexture(nextTexture);
+      video.play().catch(() => {
+        // The screen remains on its first available frame when autoplay is blocked.
+      });
+    };
+
+    video.addEventListener("canplay", handleCanPlay, { once: true });
+    video.load();
+
+    return () => {
+      disposed = true;
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+      nextTexture.dispose();
+    };
+  }, [source]);
+
+  return texture;
+};
 
 const DemoComputer = ({ texture }) => {
-  const videoTexture = useVideoTexture(texture || "/textures/project/project1.mp4", {
-    unsuspend: "canplay",
-    preload: "auto",
-  });
-
-  videoTexture.flipY = true;
-  videoTexture.colorSpace = THREE.SRGBColorSpace;
-  videoTexture.wrapS = THREE.ClampToEdgeWrapping;
-  videoTexture.wrapT = THREE.ClampToEdgeWrapping;
+  const videoTexture = useProjectVideoTexture(texture);
 
   const videoMaterial = useMemo(
     () =>
       new MeshBasicMaterial({
         map: videoTexture,
+        color: videoTexture ? "#ffffff" : "#101820",
         toneMapped: false,
         side: THREE.DoubleSide,
         depthTest: false,
