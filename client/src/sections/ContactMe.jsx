@@ -162,13 +162,7 @@ const ContactMe = () => {
                   disabled={loading}
                 >
                   {loading ? "Sending" : "Send Message"}
-                  <img
-                    src="/mobile.svg"
-                    alt="arrow-up"
-                    className={`bg-secondary px-2 py-2 min-h-12 rounded-lg shadow-slate-600 shadow-xl flex justify-center items-center text-lg text-primary gap-3_arrow ${
-                      !loading ? "animate-bounce " : ""
-                    }`}
-                  />
+                 
                 </button>
               </div>
             </form>

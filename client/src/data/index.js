@@ -7,6 +7,100 @@ import { SiOllama } from "react-icons/si";
 
 
 export const myProjects = [
+   {
+    title: 'Morgan - AI',
+    desc: 'Morgan is a  web‑app that lets you talk to the latest GPT‑based models from a single, modern UI – no signup required, but sign‑up gives you history, favorites, and multiple tabs.',
+    subdesc:
+      'It uses RTK, Tailwind, DaisyUI, MongoDB as the database and Ollama to connect to the latest models. If you are logged in you can create multiple conversations and sort by conversations or single responses that you have added a favorite tag to.',
+    href: "https://github.com/morganleigh13/morgan-ai",
+    texture: '/websites/recordings/morgan.mp4',
+    logo: SiOllama,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #be185d',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/frameworks/reactjs.png',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: '/frameworks/redux.svg',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/frameworks/tailwind.svg',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: '/frameworks/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: '/frameworks/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Ollama',
+        path: '/frameworks/llama.jpg',
+      },
+    ],
+  },
+  {
+    title: 'The Power of Me - Project Managment and eCommerace',
+    desc: 'Welcome to The Power of Me, your ultimate destination for mindfulness and spiritual growth! Here at The Power of Me, we offer a variety of yoga, chakra, and meditation classes designed to help you find inner peace, enhance flexibility, and promote overall well-being. We also have an aromatherapy store where you can purchase essential oils. All transactions are secure!!',
+    subdesc:
+      'Login System: Users can sign up for an account on our website, log in to access their dashboard. User Dashboard: Once logged in users can add and pay for classes that they are enrolled in, remove classes, see purchases from our store. Admin Dashboard: Once admin is established they have their own dashboards where they can do and see the same things as the users. PLus, they can remove users from classes, view all the users according to the classes they are enrolled in and delete users.',
+    href: "https://github.com/morganleigh13/the-power-of-me",
+    texture: '/websites/recordings/the-power-of-me.mp4',
+    logo: FaDharmachakra,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #831843',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/frameworks/reactjs.png',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: '/frameworks/redux.svg',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/frameworks/tailwind.svg',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: '/frameworks/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: '/frameworks/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Faker',
+        path: '/frameworks/faker.svg',
+      },
+    ],
+  },
   {
     title: 'Tech Talk - Blog',
     desc: 'This project focuses on creating a responsive blog website. Below is an overview of what I used in this project along with some notes on future enhancements.',
@@ -193,53 +287,7 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'The Power of Me - Project Managment and eCommerace',
-    desc: 'Welcome to The Power of Me, your ultimate destination for mindfulness and spiritual growth! Here at The Power of Me, we offer a variety of yoga, chakra, and meditation classes designed to help you find inner peace, enhance flexibility, and promote overall well-being. We also have an aromatherapy store where you can purchase essential oils. All transactions are secure!!',
-    subdesc:
-      'Login System: Users can sign up for an account on our website, log in to access their dashboard. User Dashboard: Once logged in users can add and pay for classes that they are enrolled in, remove classes, see purchases from our store. Admin Dashboard: Once admin is established they have their own dashboards where they can do and see the same things as the users. PLus, they can remove users from classes, view all the users according to the classes they are enrolled in and delete users.',
-    href: "https://github.com/morganleigh13/the-power-of-me",
-    texture: '/websites/recordings/the-power-of-me.mp4',
-    logo: FaDharmachakra,
-    logoStyle: {
-      backgroundColor: '#9d174d',
-      border: '0.2px solid #831843',
-      boxShadow: '0px 0px 60px 0px #ec4899',
-    },
-    spotlight: '/assets/spotlight5.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/frameworks/reactjs.png',
-      },
-      {
-        id: 2,
-          name: 'RTK',
-          path: '/frameworks/redux.svg',
-        },
-      {
-        id: 3,
-        name: 'TailwindCSS',
-        path: '/frameworks/tailwind.svg',
-      },
-      {
-        id: 4,
-        name: 'MongoDB',
-        path: '/frameworks/mongodb.png',
-      },
-      {
-        id: 5,
-        name: 'Node.js',
-        path: '/frameworks/nodejs.png',
-      },
-      {
-        id: 6,
-        name: 'Faker',
-        path: '/frameworks/faker.svg',
-      },
-    ],
-  },
+  
   {
     title: 'Panda Pack- Project Tracker with Postgres',
     desc: 'Project Tracker is a web application that helps track orders for various recyclable materials. The platform allows admins to place orders, manage employee data, and monitor progress using a D3 chart. Employees can also track their progress and complete tasks.  The platform has different dashboards for admins and employees, with logic to create custom dashboards for different types of employees.',
@@ -340,53 +388,7 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'Morgan - AI',
-    desc: 'Morgan is a  web‑app that lets you talk to the latest GPT‑based models from a single, modern UI – no signup required, but sign‑up gives you history, favorites, and multiple tabs.',
-    subdesc:
-      'It uses RTK, Tailwind, DaisyUI, MongoDB as the database and Ollama to connect to the latest models. If you are logged in you can create multiple conversations and sort by conversations or single responses that you have added a favorite tag to.',
-    href: "https://github.com/morganleigh13/morgan-ai",
-    texture: '/websites/recordings/morgan.mp4',
-    logo: SiOllama,
-    logoStyle: {
-      backgroundColor: '#9d174d',
-      border: '0.2px solid #be185d',
-      boxShadow: '0px 0px 60px 0px #ec4899',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/frameworks/reactjs.png',
-      },
-      {
-        id: 2,
-          name: 'RTK',
-          path: '/frameworks/redux.svg',
-        },
-      {
-        id: 3,
-        name: 'TailwindCSS',
-        path: '/frameworks/tailwind.svg',
-      },
-      {
-        id: 4,
-        name: 'MongoDB',
-        path: '/frameworks/mongodb.png',
-      },
-      {
-        id: 5,
-        name: 'Node.js',
-        path: '/frameworks/nodejs.png',
-      },
-      {
-        id: 6,
-        name: 'Ollama',
-        path: '/frameworks/llama.jpg',
-      },
-    ],
-  },
+ 
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
@@ -409,6 +411,15 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
   }
 
 export const experiences = [
+   {
+    id: 5,
+    name: 'Yoga Retreat & Booking Platform',
+    pos: 'Full-Stack Developer',
+    duration:'2026',
+   title: 'Developed a full-stack booking and client engagement platform for a yoga instructor. Implemented secure authentication, content management capabilities, automated email notifications, and a custom admin dashboard for managing retreats, classes, and site content. Designed to provide a seamless experience for both prospective clients and site administrators.',
+    icon: '/assets/khanda-solid-full.svg',
+    animation: 'clapping',
+  },
   {
     id: 1,
     name: 'Persevere BootCamp',
@@ -446,15 +457,7 @@ export const experiences = [
     icon: '/assets/donor.svg',
     animation: 'clapping',
   },
-  {
-    id: 5,
-    name: 'Yoga Retreat & Booking Platform',
-    pos: 'Full-Stack Developer',
-    duration:'2026',
-   title: 'Developed a full-stack booking and client engagement platform for a yoga instructor. Implemented secure authentication, content management capabilities, automated email notifications, and a custom admin dashboard for managing retreats, classes, and site content. Designed to provide a seamless experience for both prospective clients and site administrators.',
-    icon: '/assets/khanda-solid-full.svg',
-    animation: 'clapping',
-  }
+ 
  
 ];
 export const items = [

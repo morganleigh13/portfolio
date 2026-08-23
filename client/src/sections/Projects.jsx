@@ -3,6 +3,7 @@ import { useState, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
+import { useMediaQuery } from "react-responsive";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/canvas/DemoComputer";
 import { useSelector } from "react-redux";
@@ -12,7 +13,10 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [projectIndex, setProjectIndex] = useState(0);
+  const [modelInteraction, setModelInteraction] = useState(false);
   const { search } = useSelector((state) => state.animations);
+  // below lg the two columns stack, so the laptop sits directly under the text
+  const isStacked = useMediaQuery({ maxWidth: 1023 });
 
   const groupRef = useRef();
   const filteredProjects = myProjects.filter(
@@ -135,7 +139,16 @@ shadow-black"
                 </button>
               </div>
             </div>
-            <div className="border border-secondary/60 shadow-[5px_4px_6px_var(--color-secondary)] bg-base-300 rounded-lg h-96 md:h-full">
+            <div className="relative border border-secondary/60 shadow-[5px_4px_6px_var(--color-secondary)] bg-base-300 rounded-lg h-96 md:h-full">
+              {isStacked && (
+                <button
+                  type="button"
+                  className="absolute top-3 right-3 z-10 border rounded-xl px-2 vintage tracking-widest text-secondary bg-base-300/80"
+                  onClick={() => setModelInteraction((prev) => !prev)}
+                >
+                  {modelInteraction ? "Stop Interaction" : "Start Interaction"}
+                </button>
+              )}
               <Canvas>
                 <ambientLight intensity={Math.PI} />
                 <directionalLight position={[10, 10, 5]} />
@@ -158,7 +171,7 @@ shadow-black"
                   position={[0, 1.5, 0]}
                 />
                 <OrbitControls
-                  enableZoom={true}
+                  enableZoom={!isStacked || modelInteraction}
                   enablePan={false}
                   enableRotate={false}
                   minDistance={2.35}
