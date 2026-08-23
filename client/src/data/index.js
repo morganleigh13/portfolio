@@ -54,6 +54,111 @@ export const myProjects = [
       },
     ],
   },
+   {
+    title: 'Project You - Project Tracker',
+    desc: 'Welcome to Project You, your one-stop website for premade packages that can transform you through plastic surgery, dentistry, working out, life coaches and more! This platform is designed to help users sign up for various services offered by certified professionals in the medical field. Our mission is to provide a safe and convenient environment where users can connect with their preferred service providers while ensuring their privacy and security at all times.',
+    subdesc:
+      'Employee Signup/Login System, Client and Employee Management System, Tasks Management System, Certification System and much more. Check out my repo for a full ReadMe.',
+    href: "https://github.com/morganleigh13/project-you",
+    texture: '/websites/recordings/project-you.mp4',
+    logo: LuHandHeart,
+    logoStyle: {
+      backgroundColor: '#5b21b6',
+      border: '0.2px solid #581c87',
+      boxShadow: '0px 0px 60px 0px #a78bfa',
+    },
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/frameworks/reactjs.png',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: '/frameworks/redux.svg',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/frameworks/tailwind.svg',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: '/frameworks/mongodb.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: '/frameworks/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Framer Motion',
+        path: '/frameworks/framer.png',
+      },
+      {
+        id: 7,
+        name: 'Faker',
+        path: '/frameworks/faker.svg',
+      },
+    ],
+  },
+  
+  {
+    title: 'Panda Pack- Project Tracker with Postgres',
+    desc: 'Project Tracker is a web application that helps track orders for various recyclable materials. The platform allows admins to place orders, manage employee data, and monitor progress using a D3 chart. Employees can also track their progress and complete tasks.  The platform has different dashboards for admins and employees, with logic to create custom dashboards for different types of employees.',
+    subdesc:
+      'This app. uses PostgreSQL as the database, Redux Toolkit for state management, JWT and express for authentication, and Argon2 login for password protection.',
+    href: "https://github.com/morganleigh13/panda-pack",
+    texture: '/websites/recordings/panda-pack.mp4',
+    logo: SiFoodpanda,
+    logoStyle: {
+      backgroundColor: '#9d174d',
+      border: '0.2px solid #831843',
+      boxShadow: '0px 0px 60px 0px #ec4899',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/frameworks/reactjs.png',
+      },
+      {
+        id: 2,
+          name: 'RTK',
+          path: '/frameworks/redux.svg',
+        },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/frameworks/tailwind.svg',
+      },
+      {
+        id: 7,
+        name: 'Daisy',
+        path: '/frameworks/daisy.jpg',
+      },
+      {
+        id: 4,
+        name: 'Postgres',
+        path: '/frameworks/postgres.png',
+      },
+      {
+        id: 5,
+        name: 'Node.js',
+        path: '/frameworks/nodejs.png',
+      },
+      {
+        id: 6,
+        name: 'Faker',
+        path: '/frameworks/faker.svg',
+      },
+    ],
+  },
   {
     title: 'The Power of Me - Project Managment and eCommerace',
     desc: 'Welcome to The Power of Me, your ultimate destination for mindfulness and spiritual growth! Here at The Power of Me, we offer a variety of yoga, chakra, and meditation classes designed to help you find inner peace, enhance flexibility, and promote overall well-being. We also have an aromatherapy store where you can purchase essential oils. All transactions are secure!!',
@@ -235,111 +340,7 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'Project You - Project Tracker',
-    desc: 'Welcome to Project You, your one-stop website for premade packages that can transform you through plastic surgery, dentistry, working out, life coaches and more! This platform is designed to help users sign up for various services offered by certified professionals in the medical field. Our mission is to provide a safe and convenient environment where users can connect with their preferred service providers while ensuring their privacy and security at all times.',
-    subdesc:
-      'Employee Signup/Login System, Client and Employee Management System, Tasks Management System, Certification System and much more. Check out my repo for a full ReadMe.',
-    href: "https://github.com/morganleigh13/project-you",
-    texture: '/websites/recordings/project-you.mp4',
-    logo: LuHandHeart,
-    logoStyle: {
-      backgroundColor: '#5b21b6',
-      border: '0.2px solid #581c87',
-      boxShadow: '0px 0px 60px 0px #a78bfa',
-    },
-    spotlight: '/assets/spotlight4.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/frameworks/reactjs.png',
-      },
-      {
-        id: 2,
-          name: 'RTK',
-          path: '/frameworks/redux.svg',
-        },
-      {
-        id: 3,
-        name: 'TailwindCSS',
-        path: '/frameworks/tailwind.svg',
-      },
-      {
-        id: 4,
-        name: 'MongoDB',
-        path: '/frameworks/mongodb.png',
-      },
-      {
-        id: 5,
-        name: 'Node.js',
-        path: '/frameworks/nodejs.png',
-      },
-      {
-        id: 6,
-        name: 'Framer Motion',
-        path: '/frameworks/framer.png',
-      },
-      {
-        id: 7,
-        name: 'Faker',
-        path: '/frameworks/faker.svg',
-      },
-    ],
-  },
-  
-  {
-    title: 'Panda Pack- Project Tracker with Postgres',
-    desc: 'Project Tracker is a web application that helps track orders for various recyclable materials. The platform allows admins to place orders, manage employee data, and monitor progress using a D3 chart. Employees can also track their progress and complete tasks.  The platform has different dashboards for admins and employees, with logic to create custom dashboards for different types of employees.',
-    subdesc:
-      'This app. uses PostgreSQL as the database, Redux Toolkit for state management, JWT and express for authentication, and Argon2 login for password protection.',
-    href: "https://github.com/morganleigh13/panda-pack",
-    texture: '/websites/recordings/panda-pack.mp4',
-    logo: SiFoodpanda,
-    logoStyle: {
-      backgroundColor: '#9d174d',
-      border: '0.2px solid #831843',
-      boxShadow: '0px 0px 60px 0px #ec4899',
-    },
-    spotlight: '/assets/spotlight5.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/frameworks/reactjs.png',
-      },
-      {
-        id: 2,
-          name: 'RTK',
-          path: '/frameworks/redux.svg',
-        },
-      {
-        id: 3,
-        name: 'TailwindCSS',
-        path: '/frameworks/tailwind.svg',
-      },
-      {
-        id: 7,
-        name: 'Daisy',
-        path: '/frameworks/daisy.jpg',
-      },
-      {
-        id: 4,
-        name: 'Postgres',
-        path: '/frameworks/postgres.png',
-      },
-      {
-        id: 5,
-        name: 'Node.js',
-        path: '/frameworks/nodejs.png',
-      },
-      {
-        id: 6,
-        name: 'Faker',
-        path: '/frameworks/faker.svg',
-      },
-    ],
-  },
+
 
   {
     title: 'Frosting - E-Commerce',
