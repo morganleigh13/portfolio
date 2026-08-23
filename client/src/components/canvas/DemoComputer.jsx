@@ -18,14 +18,14 @@ const useProjectVideoTexture = (source) => {
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
-    video.preload = "metadata";
+    video.preload = "auto";
 
     nextTexture.colorSpace = THREE.SRGBColorSpace;
     nextTexture.flipY = true;
     nextTexture.wrapS = THREE.ClampToEdgeWrapping;
     nextTexture.wrapT = THREE.ClampToEdgeWrapping;
 
-    const handleCanPlay = () => {
+    const handleLoadedData = () => {
       if (disposed) return;
       setTexture(nextTexture);
       video.play().catch(() => {
@@ -33,7 +33,7 @@ const useProjectVideoTexture = (source) => {
       });
     };
 
-    video.addEventListener("canplay", handleCanPlay, { once: true });
+    video.addEventListener("loadeddata", handleLoadedData, { once: true });
     video.load();
 
     return () => {
