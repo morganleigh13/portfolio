@@ -55,7 +55,7 @@ const Projects = () => {
         >
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 w-full ">
             <div
-              className="flex flex-col gap-5
+              className="flex flex-col gap-5 h-full
 relative sm:p-10 py-10 px-5 shadow-2xl
 shadow-black"
             >
@@ -76,7 +76,7 @@ shadow-black"
                 />
               </div>
 
-              <div className="flex flex-col gap-5 tracking-wider my-5 ">
+              <div className="flex flex-col gap-5 tracking-wider my-5">
                 <p className="text-3xl text-info font-semibold animatedText p-1 ">
                   {currentProject.title}
                 </p>
@@ -105,30 +105,32 @@ shadow-black"
                   className="flex gap-3 items-baseline"
                 >
                   <p className="text-info contrast-200 text-xl">
-                    Go To gitHub Repo
+                  gitHub Repo
                   </p>
                   <img src="/assets/arrow-up.png" alt="arrow" />
                 </a>
               </div>
-              <div className="flex justify-between items-center mt-7 tracking-wider">
+              <div className="flex justify-between items-center mt-auto pt-7 tracking-wider">
                 <button
-                  className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient animate-pulse ease-in-out"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient animate-pulse ease-in-out"
                   onClick={() => handleNavigation("previous")}
-                > previous
+                >
                   <img
                     src="/assets/left-arrow.png"
                     alt="left-arrow"
-                    className="size-6 pt-2"
+                    className="size-6"
                   />
+                  previous
                 </button>
                 <button
-                  className="w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient animate-pulse ease-in-out"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient animate-pulse ease-in-out"
                   onClick={() => handleNavigation("next")}
-                > next
+                >
+                  next
                   <img
                     src="/assets/right-arrow.png"
                     alt="right-arrow"
-                    className="size-6 pt-2"
+                    className="size-6"
                   />
                 </button>
               </div>
