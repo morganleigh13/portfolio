@@ -6,42 +6,6 @@ import { SiFoodpanda } from "react-icons/si";
 import { SiOllama } from "react-icons/si";
 
 
-export const reviews = [
-  // {
-  //   id: 1,
-  //   name: 'Emily Johnson',
-  //   position: 'Marketing Director at GreenLeaf',
-  //   img: 'people/girlBlonde.jpg',
-  //   review:
-  //     'Working with Morgan was a fantastic experience. She transformed our outdated website into a modern, user-friendly platform. Her attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'Mark Rogers',
-  //   position: 'Founder of TechGear Shop',
-  //   img: 'people/guyProfile.jpg',
-  //   review:
-  //     'Morgan’s expertise in web development is truly impressive. She delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. She’s a true professional! Fantastic work.',
-  // },
-  // {
-  //   id: 3,
-  //   name: 'John Dohsas',
-  //   position: 'Project Manager at UrbanTech ',
-  //   img: 'people/guyLatino.jpg',
-  //   review:
-  //     'I can’t say enough good things about Morgan. She was able to take our complex project requirements and turn them into a seamless, functional website. Her problem-solving abilities are outstanding.',
-  // },
-  // {
-  //   id: 4,
-  //   name: 'Ether Smith',
-  //   position: 'CEO of BrightStar Enterprises',
-  //   img: 'people/girlMulti.jpg',
-  //   review:
-  //     'Morgan was a pleasure to work with. She understood our requirements perfectly and delivered a website that exceeded our expectations. Her skills in both frontend and backend are top-notch.',
-  // },
-];
-
-
 export const myProjects = [
   {
     title: 'Tech Talk - Blog',
@@ -450,7 +414,7 @@ export const experiences = [
     name: 'Persevere BootCamp',
     pos: 'Junior Web Developer & TA',
     duration: '2023 - Present',
-    title: "Mentored 20+ peers from beginning coders into MERN full stack web developers. Co‑authored a comprehensive class wiki that now serves as the go‑to resource for all future students.",
+    title: "Supported and mentored 20+ peers in mastering MERN stack development, helping them build full-stack web applications. Co-created a comprehensive course wiki that became the standard reference resource for subsequent student cohorts.",
     icon: '/assets/p.svg',
     animation: 'salute',
     iconBg: "var(--color-base-100)"
@@ -460,7 +424,7 @@ export const experiences = [
     name: 'Live Streaming Hack-a-thon',
     pos: 'Team Lead',
     duration: 'April 2025',
-    title: " Designed a full‑stack Daily‑Check‑In app that earned the “Best Innovation” award during our first ever Hack-a-thon.",
+    title: "Designed and built a full-stack Daily Check-In application, earning the “Best Innovation” award at the organization’s first hackathon.",
     icon: '/assets/chat.svg',
     animation: 'victory',
   },
@@ -469,7 +433,7 @@ export const experiences = [
     name: 'Senior Developer',
     pos: 'Pair Programming',
     duration:'2025 - 2026',
-    title: "Hands on experiance working with and being mentored by a senior developer with over 25+ years of experiance. Updating frameworks such as changing Create React App applications to Vite. Working on a student portal, Wiki and being part of a team to create a donor-tracking CRM.",
+    title: "Worked alongside and received mentorship for 2 years from a senior developer with over 25 years of experience. Supported framework modernization by migrating Create React App projects to Vite and contributed to the development of a student portal, class wiki, and donor-tracking CRM.",
     icon: '/assets/hand.svg',
     animation: 'salute',
   },
@@ -478,11 +442,19 @@ export const experiences = [
     name: 'Donor‑Tracking CRM',
     pos: 'Team Member',
     duration:'2025',
-    title: "Collaborated with other developers on gitLab to built a CRM for a non‑profit, featuring secure CRUD, pagination, and sortable tables. Integrated role‑based access control and server‑side validation to protect sensitive data. Streamlined the workflow with dynamic filtering and export options.Implemented a reusable Argon2‑protected login component shared across all projects.",
+    title: "Partnered with a development team to deliver a CRM for a nonprofit organization using GitLab. Built secure CRUD features, pagination, and sortable tables; implemented role-based access control and server-side validation; streamlined user workflows with filtering and export functionality; and developed a reusable Argon2-protected authentication.",
     icon: '/assets/donor.svg',
     animation: 'clapping',
   },
- 
+  {
+    id: 5,
+    name: 'Yoga Retreat & Booking Platform',
+    pos: 'Full-Stack Developer',
+    duration:'2026',
+   title: 'Developed a full-stack booking and client engagement platform for a yoga instructor. Implemented secure authentication, content management capabilities, automated email notifications, and a custom admin dashboard for managing retreats, classes, and site content. Designed to provide a seamless experience for both prospective clients and site administrators.',
+    icon: '/assets/khanda-solid-full.svg',
+    animation: 'clapping',
+  }
  
 ];
 export const items = [
