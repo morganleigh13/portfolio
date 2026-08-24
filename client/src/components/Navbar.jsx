@@ -10,23 +10,19 @@ const Navbar = ({ hidden }) => {
     <>
       {!hidden && (
         <motion.header
-          className="fixed top-0 left-0 right-0 z-100"
+          className="fixed top-0 left-0 right-0 z-[100]"
           animate={{
             y: hidden ? -140 : 0,
             opacity: hidden ? 0 : 1,
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="vintage flex items-center justify-between bg-base-200 w-full rounded-md h-24 max-lg:collapse lg:mb-48 z-100">
+          <div className="vintage relative flex h-24 w-full items-center justify-between rounded-md bg-base-200 lg:mb-48">
             <input
               id="navbar-1-toggle"
               className="peer hidden"
               type="checkbox"
             />
-            <label
-              htmlFor="navbar-1-toggle"
-              className="absolute inset-0 hidden max-lg:peer-checked:block"
-            ></label>
             <div className="collapse-title navbar">
               <div className="navbar-start">
                 <label
@@ -138,11 +134,11 @@ const Navbar = ({ hidden }) => {
                 />
               </div>
             </div>
-            <div className="collapse-content lg:hidden absolute top-20 left-0 bg-base-100 rounded-xl overflow-visible z-100">
-              <ul className="menu px-1 text-xl gap-5">
+            <div className="absolute left-3 right-3 top-full w-fit z-[110] mt-2 hidden rounded-xl bg-base-100 p-3 shadow-2xl peer-checked:flex lg:hidden">
+              <ul className="menu w-fit gap-2 px-1 text-xl">
                 <li>
                   <button className="hover:text-secondary">
-                    <a href="#morgan">Morgan</a>
+                    <a href="#lotus">Morgan</a>
                   </button>
                 </li>
                 <li>
