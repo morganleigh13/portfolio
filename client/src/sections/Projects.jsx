@@ -9,6 +9,10 @@ import DemoComputer from "../components/canvas/DemoComputer";
 import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
 
+const tagSearchAliases = {
+  rtk: ["redux", "redux toolkit"],
+};
+
 const Projects = () => {
   const [projectIndex, setProjectIndex] = useState(0);
   const [modelInteraction, setModelInteraction] = useState(false);
@@ -22,9 +26,12 @@ const Projects = () => {
       project.title.toLowerCase().includes(search.toLowerCase()) ||
       project.desc.toLowerCase().includes(search.toLowerCase()) ||
       project.subdesc.toLowerCase().includes(search.toLowerCase()) ||
-      project.tags.some(
-        (tag) => tag.name.toLowerCase() === search.toLowerCase()
-      )
+      project.tags.some((tag) => {
+        const tagName = tag.name.toLowerCase();
+        return [tagName, ...(tagSearchAliases[tagName] ?? [])].some((term) =>
+          term.includes(search.toLowerCase())
+        );
+      })
   );
 
   useEffect(() => {
