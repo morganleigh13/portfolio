@@ -43,7 +43,7 @@ const ProfileCardComponent = ({
   miniAvatarUrl,
   name = 'Morgan Adams',
   title = 'Software Engineer',
-  handle = 'morganLeigh',
+  handle = 'morganleigh13',
   status = 'LinkedIn',
   contactText = 'Contact',
   showUserInfo = true,
@@ -533,8 +533,9 @@ const ProfileCardComponent = ({
                       />
                     </div>
                     <div className="flex flex-col items-start gap-1.5">
-                      <div className="text-sm font-medium text-white/90 leading-none">@{handle}</div>
-                      <div className="text-sm text-white/70 leading-none">{status}</div>
+                      
+                      <a href={`https://linkedin.com/in/${handle}`} target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 leading-none">@{handle}
+                      <div className="text-sm text-white/70 leading-none">{status}</div></a>
                     </div>
                   </div>
               
