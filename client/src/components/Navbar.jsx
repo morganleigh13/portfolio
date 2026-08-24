@@ -6,6 +6,9 @@ const Navbar = ({ hidden }) => {
   const dispatch = useDispatch();
 
   const { search } = useSelector((state) => state.animations);
+  const searchHint = search
+    ? "Scroll down to see matching results"
+    : "Filters Personal Projects and Work Experience only";
   const scrollToProjects = () => {
     dispatch(setSearchActive(true));
     document.getElementById("projects")?.scrollIntoView({
@@ -136,9 +139,9 @@ const Navbar = ({ hidden }) => {
               </div>
               <div className="navbar-end">
                 <div
-                  className="tooltip tooltip-bottom relative"
-                  data-tip="Filters Personal Projects and Work Experience only"
-                  title="Filters Personal Projects and Work Experience only"
+                  className="tooltip tooltip-bottom relative max-sm:tooltip-left max-sm:before:w-40 max-sm:before:whitespace-normal"
+                  data-tip={searchHint}
+                  title={searchHint}
                 >
                   <input
                     value={search}
