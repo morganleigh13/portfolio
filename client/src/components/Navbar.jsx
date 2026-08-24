@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { setSearch, setSearchActive } from "../redux/animationSlice";
+import { setHidden, setSearch, setSearchActive } from "../redux/animationSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = ({ hidden }) => {
@@ -11,9 +11,12 @@ const Navbar = ({ hidden }) => {
     : "Filters Personal Projects and Work Experience only";
   const scrollToProjects = () => {
     dispatch(setSearchActive(true));
-    document.getElementById("projects")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+    dispatch(setHidden(false));
+    requestAnimationFrame(() => {
+      document.getElementById("projects")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
   };
 

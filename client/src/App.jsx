@@ -73,7 +73,7 @@ const App = () => {
           },
         }}
       />
-      <Navbar hidden={hidden} />
+      <Navbar hidden={hidden && !isSearchActive} />
       <div className="bg-base-300">
         <Lotus />
         <Frameworks />
