@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useState, Suspense, useRef } from "react";
+import { useEffect, useState, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
@@ -8,8 +8,6 @@ import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/canvas/DemoComputer";
 import { useSelector } from "react-redux";
 import { myProjects } from "../data/index";
-
-const projectCount = myProjects.length;
 
 const Projects = () => {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -29,15 +27,19 @@ const Projects = () => {
       )
   );
 
+  useEffect(() => {
+    setProjectIndex(0);
+  }, [search]);
+
   const currentProject = filteredProjects[projectIndex];
   const IconComponent = filteredProjects[projectIndex]?.logo;
 
   const handleNavigation = (direction) => {
     setProjectIndex((prevIndex) => {
       if (direction === "previous") {
-        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
+        return prevIndex === 0 ? filteredProjects.length - 1 : prevIndex - 1;
       } else {
-        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
+        return prevIndex === filteredProjects.length - 1 ? 0 : prevIndex + 1;
       }
     });
   };
@@ -182,6 +184,36 @@ shadow-black"
               </Canvas>
             </div>
           </div>
+          {search && (
+            <div className="mt-8 border-t border-secondary/30 pt-6">
+              <h3 className="text-center text-3xl text-secondary">
+                {filteredProjects.length} matching project{filteredProjects.length === 1 ? "" : "s"}
+              </h3>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                {filteredProjects.map((project, index) => (
+                  <button
+                    key={project.title}
+                    type="button"
+                    onClick={() => setProjectIndex(index)}
+                    className={`rounded-xl border p-5 text-left transition hover:border-primary hover:bg-base-200 ${
+                      index === projectIndex ? "border-primary bg-base-200" : "border-secondary/40 bg-base-100/60"
+                    }`}
+                    aria-current={index === projectIndex ? "true" : undefined}
+                  >
+                    <p className="text-xl font-semibold text-info">{project.title}</p>
+                    <p className="mt-2 line-clamp-4 text-base text-base-content">{project.desc}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag.id} className="rounded-full bg-base-300 px-2 py-1 text-sm text-secondary">
+                          {tag.name}
+                        </span>
+                      ))}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       ) : (
         <div className="text-5xl flex justify-center vintage py-10 animate-pulse text-warning ">

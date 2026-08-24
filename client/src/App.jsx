@@ -13,7 +13,7 @@ import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
-  const hidden = useSelector((state) => state.animations.hidden);
+  const { hidden, isSearchActive } = useSelector((state) => state.animations);
 
   const scrollContainer = useRef();
   const { scrollY } = useScroll();
@@ -21,6 +21,11 @@ const App = () => {
   const prevScroll = useRef(0);
 
   useMotionValueEvent(scrollY, "change", (current) => {
+    if (isSearchActive) {
+      dispatch(setHidden(false));
+      return;
+    }
+
     const previous = scrollY.getPrevious() ?? 0;
     if (current <= 150) {
       dispatch(setHidden(true));

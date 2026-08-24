@@ -1,16 +1,26 @@
 import { motion } from "motion/react";
-import { setSearch } from "../redux/animationSlice";
+import { setSearch, setSearchActive } from "../redux/animationSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = ({ hidden }) => {
   const dispatch = useDispatch();
 
   const { search } = useSelector((state) => state.animations);
+  const scrollToProjects = () => {
+    dispatch(setSearchActive(true));
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const clearSearch = () => dispatch(setSearch(""));
+
   return (
     <>
       {!hidden && (
         <motion.header
-          className="fixed top-0 left-0 right-0 z-[100]"
+          className="fixed top-0 left-0 right-0 z-100"
           animate={{
             y: hidden ? -140 : 0,
             opacity: hidden ? 0 : 1,
@@ -125,13 +135,34 @@ const Navbar = ({ hidden }) => {
                 </ul>
               </div>
               <div className="navbar-end">
-                <input
-                  value={search}
-                  onChange={(e) => dispatch(setSearch(e.target.value))}
-                  type="text"
-                  placeholder="Search"
-                  className="input input-bordered w-64 lg:w-auto"
-                />
+                <div
+                  className="tooltip tooltip-bottom relative"
+                  data-tip="Filters Personal Projects and Work Experience only"
+                  title="Filters Personal Projects and Work Experience only"
+                >
+                  <input
+                    value={search}
+                    onChange={(e) => dispatch(setSearch(e.target.value))}
+                    onFocus={scrollToProjects}
+                    onClick={scrollToProjects}
+                    onBlur={() => dispatch(setSearchActive(false))}
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search personal projects and work experience"
+                    className="input input-bordered w-32 pr-9 sm:w-48 lg:w-64"
+                  />
+                  {search && (
+                    <button
+                      type="button"
+                      onClick={clearSearch}
+                      className="btn btn-ghost btn-xs absolute right-2 top-1/2 -translate-y-1/2 rounded-full text-lg"
+                      aria-label="Clear project and work experience filters"
+                      title="Clear filters"
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
             <div className="absolute left-3 right-3 top-full w-fit z-[110] mt-2 hidden rounded-xl bg-base-100 p-3 shadow-2xl peer-checked:flex lg:hidden">

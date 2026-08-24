@@ -5,7 +5,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
  hidden: true,
  interaction: false,
- search: ""
+ search: "",
+ isSearchActive: false,
 }
 
 const animationSlice = createSlice({
@@ -22,9 +23,12 @@ const animationSlice = createSlice({
     setSearch(state, action) {
       console.log("search", action.payload)
       state.search = action.payload
+    },
+    setSearchActive(state, action) {
+      state.isSearchActive = action.payload
     }
   },
 });
 
-export const { setHidden, setInteraction, setSearch } = animationSlice.actions;
+export const { setHidden, setInteraction, setSearch, setSearchActive } = animationSlice.actions;
 export default animationSlice.reducer;
