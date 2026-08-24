@@ -223,7 +223,7 @@ shadow-black"
           )}
         </section>
       ) : (
-        <div className="text-5xl flex justify-center vintage py-10 animate-pulse text-warning ">
+        <div className="text-4xl flex justify-center vintage py-5 text-warning animate-pulse">
           <p>There are no current projects that meet that search criteria.</p>
         </div>
       )}

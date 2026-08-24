@@ -21,7 +21,9 @@ const App = () => {
   const prevScroll = useRef(0);
 
   useMotionValueEvent(scrollY, "change", (current) => {
-    if (isSearchActive) {
+    const isSearchFocused = document.activeElement?.id === "site-search";
+
+    if (isSearchActive || isSearchFocused) {
       dispatch(setHidden(false));
       return;
     }

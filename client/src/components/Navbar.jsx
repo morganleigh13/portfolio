@@ -147,6 +147,7 @@ const Navbar = ({ hidden }) => {
                   title={searchHint}
                 >
                   <input
+                    id="site-search"
                     value={search}
                     onChange={(e) => dispatch(setSearch(e.target.value))}
                     onFocus={scrollToProjects}
